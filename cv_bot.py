@@ -9,6 +9,9 @@ from langchain_core.output_parsers import StrOutputParser
 # NEW: Imports for labeling the conversation history
 from langchain_core.messages import HumanMessage, AIMessage
 
+# Define our preferred working model here (Using the latest one you confirmed)
+WORKING_MODEL_NAME = "gemini-flash-lite-latest"  # <--- USE THIS NAME BASED ON YOUR SUCCESS
+
 # 1. LOAD SECRETS
 load_dotenv()
 user_phone = os.getenv("USER_PHONE")
@@ -24,7 +27,7 @@ chunks = text_splitter.split_text(content)
 
 # 3. SETUP THE BRAINS
 embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004")
-model = ChatGoogleGenerativeAI(model="gemini-flash-lite-latest")
+model = ChatGoogleGenerativeAI(model=WORKING_MODEL_NAME)
 
 # 4. SETUP THE FILING CABINET (Vector Store)
 persist_dir = "my_cv_database"
