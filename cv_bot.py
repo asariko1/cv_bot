@@ -10,7 +10,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.messages import HumanMessage, AIMessage
 
 # Define our preferred working model here (Using the latest one you confirmed)
-WORKING_MODEL_NAME = "gemini-flash-lite-latest"  # <--- USE THIS NAME BASED ON YOUR SUCCESS
+WORKING_MODEL_NAME = "gemini-2.5-flash-lite"  # <--- USE THIS NAME BASED ON YOUR SUCCESS
 
 # 1. LOAD SECRETS
 load_dotenv()
@@ -26,7 +26,7 @@ text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
 chunks = text_splitter.split_text(content)
 
 # 3. SETUP THE BRAINS
-embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004")
+embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
 model = ChatGoogleGenerativeAI(model=WORKING_MODEL_NAME)
 
 # 4. SETUP THE FILING CABINET (Vector Store)

@@ -12,7 +12,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.messages import HumanMessage, AIMessage
 
 # Define our preferred working model here
-WORKING_MODEL_NAME = "gemini-flash-lite-latest" # Or whatever name you confirmed works!
+WORKING_MODEL_NAME = "gemini-2.5-flash-lite" # Or whatever name you confirmed works!
 
 # 2. SETUP SECRETS & DATA
 load_dotenv()
