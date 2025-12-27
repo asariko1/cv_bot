@@ -1,2 +1,2 @@
 # cv_bot
-I developed this project as a live AI bot demonstration to feature on my CV.
+I developed this project as a live AI bot demonstration for my CV. I received a lot of help from AI Studio, as I did not know much about coding initially. I just learned how to push projects to Git two days ago, and now I have my own functional chatbot."

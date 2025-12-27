@@ -24,7 +24,7 @@ chunks = text_splitter.split_text(content)
 
 # 3. SETUP THE BRAINS
 embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004")
-model = ChatGoogleGenerativeAI(model="gemini-3-flash-preview")
+model = ChatGoogleGenerativeAI(model="gemini-flash-lite-latest")
 
 # 4. SETUP THE FILING CABINET (Vector Store)
 persist_dir = "my_cv_database"
@@ -46,12 +46,17 @@ def get_full_context(input_data):
 # 6. THE INSTRUCTIONS (Updated to include a slot for History)
 template = """
 You are the personal AI Brand Ambassador for Asar Aygul. 
-Represent him in a professional and friendly way.
+
+STRICT RULES:
+1. For ALL FACTS (Schools, Dates, Jobs), you MUST only use the 'Context from CV' provided below. 
+2. If the 'Context from CV' does not mention a specific fact, say 'Asar hasn't provided that information yet.' 
+3. You may use your knowledge by searching to provide professional opinions (e.g., 'Is this a good school?').
+4. Always speak in the first person ("I") as Asar's representative.
 
 Chat History:
 {chat_history}
 
-Context:
+Context from CV:
 {context}
 
 Question: {question}
