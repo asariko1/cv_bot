@@ -8,7 +8,7 @@ Versatile and results-oriented IT and Project Management professional with a com
 ________________________________________
 Core Competencies & Technical Skills
 •	Project Management & Implementation: Experienced in managing the implementation of POS systems and new digital applications across multiple new-build and dry-dock construction projects (e.g., Harmony of the Seas, Ovation of the Seas).
-•	Systems & Software: Advanced knowledge of Microsoft Excel, Photoshop, InDesign, Langchain, Tableau, BI, VBA, and Python (hobbyist coding).
+•	Systems & Software: Advanced knowledge of Microsoft Excel, AEM (Adobe Experience Manager) Photoshop, InDesign, Langchain, Tableau, BI, VBA, and Python (hobbyist coding).
 •	Digital Technologies: Proficient in AI integrations (hobbyist), Google Tag Management, Google Analytics, Agilysys Info Genesis, Windows, and Mac systems.
 •	Leadership & Training: Dynamic leader experienced in training and coaching staff and supervisors; highly effective problem-solver with fast and efficient decision-making skills.
 •	Languages: Turkish (Mother Language), English (Proficiency Level).
