@@ -1,54 +1,63 @@
 Name: Asar Aygul
 
 
-About	Objective,
-To become a valuable member of an organization who can use an outgoing and highly motivated professional that offers a proven ability to produce profit, improve profit margin, satisfy customers, and motivate employees.
+I began my career in e-commerce customer support before self-studying network operations to transition into a Network Support role at Superonline, a major Internet Service Provider. Driven by a passion for global work environments, I moved into the maritime industry. Currently, I manage all onboard digital applications, including the Royal App, digital signage, and graphic systems. I am a results-oriented professional known for my efficiency, technical aptitude, and strong work ethic.
 
-Profile,
-A dynamic, results-oriented manager who is offering focused leadership to drive sales and profitability in highly competitive markets, resolve problems quickly and equitably to ensure happy employees and happy customers. 
+Professional Summary
+Versatile and results-oriented IT and Project Management professional with a comprehensive background spanning civil engineering projects (Marmaray underwater construction), high-stakes ISP network operations, and maritime digital application management. Proven ability to self-learn and adapt to emerging technologies (AI models, Python, Langchain, BI) to drive operational efficiency and profitability. I possess advanced technical proficiencies and leadership experience in deploying large-scale systems across new ship builds and dry dock construction projects, ensuring high customer satisfaction and motivating cross-functional teams.
+________________________________________
+Core Competencies & Technical Skills
+•	Project Management & Implementation: Experienced in managing the implementation of POS systems and new digital applications across multiple new-build and dry-dock construction projects (e.g., Harmony of the Seas, Ovation of the Seas).
+•	Systems & Software: Advanced knowledge of Microsoft Excel, Photoshop, InDesign, Langchain, Tableau, BI, VBA, and Python (hobbyist coding).
+•	Digital Technologies: Proficient in AI integrations (hobbyist), Google Tag Management, Google Analytics, Agilysys Info Genesis, Windows, and Mac systems.
+•	Leadership & Training: Dynamic leader experienced in training and coaching staff and supervisors; highly effective problem-solver with fast and efficient decision-making skills.
+•	Languages: Turkish (Mother Language), English (Proficiency Level).
+•	Interests: Soccer, Cycling, Chess, Reading.
+•	
+________________________________________
+Experience
+Royal Caribbean International | [City, Country of employment base]
+March 2010 – Present
+•	Digital Manager (2021 – Present)
+o	In charge of all digital applications onboard the ship (Royal App, Digi Screens, graphics, etc.).
+•	F&B Training Manager (2017 – 2021)
+o	Managed the training of all F&B department staff and provided coaching to supervisors.
+•	Travel F&B Manager - Systems, Projects & Training (2016 – 2017)
+o	Fully in charge of implementing the POS system (Agilysys Info Genesis) across the fleet.
+o	Managed implementation and training teams for new builds (Ovation of the Seas, Harmony of the Seas) and dry docks (Voyager of the Seas, Explorer of the Seas, Nordic Empress, Jewel of the Seas).
+•	Assistant Dining Room Manager (2015 – 2016)
+o	Managed dining room administration and floor operations.
+•	Head Waiter (2011 – 2015)
+•	Restaurant Operations Coordinator (2010 – 2011)
+•	
+Superonline (Internet Service Provider) | Istanbul, Turkey
+2007 – 2008
+•	Network Support (Network Operation Center - NOC)
+o	Provided technical support within the NOC environment after self-learning network operations.
+•	
+o	
+Ideefixe (Electronic Commerce Company) | Istanbul, Turkey
+2000 – 2001
+•	Call Center Team Leader
+•	
+(Additional early experience as Waiter at various hotels from 2003-2005 omitted for brevity/focus, can be added if desired)
+________________________________________
+Project Management & Engineering
+•	Marmaray Project (Underwater Subway Construction): Worked as a Tunnel Engineer on this major infrastructure project prior to my maritime career.
+•	New Ship Builds & Dry Docks: Key team member involved in the successful construction and system implementation phases for Harmony of the Seas and Ovation of the Seas, focusing on technology integration and crew training.
+•	
+________________________________________
+Education
+Istanbul University | Istanbul, Turkey
+Master of Engineering (M.E.) in Mining Engineering (ISCED Code: 52) | 2000–2007
+Anadolu University | Eskisehir, Turkey
+Bachelor of Business Administration (BBA) (ISCED Code: 34) | 2003–2008
+________________________________________
+Military Service
+Mandatory Army Duty | North Cyprus Guzelyurt Army Base
+Achieved Sergeant Rank
 
-Skills & Abilities,
-Strong problem solving, fast and efficient decision making. Knowledge of using both Windows and Mac systems, Visual Basic for Applications, Agilysys Info Genesis, Advanced Microsoft Excel skills. Google Tag Management Certificate, Advanced Google Analytics Certificate, Tableau 9
-Experience	Worked numerous bars and restaurants during education years.
 
-Royal Caribbean International, 
-Food & Beverage
-2018 – Assistant Maitre’D (Current position 2020)
-            In charge of dining room admin and floor operation.
-2017 - F&B Training Manager.
-            Training all F&B department and also coaching supervisors.
-2016 - Trvl F&B Mgr - Sys, Proj & Trg 
-             Fully in charge of implementing the POS system to the ships, training the crew members by working together with implementation and infrastructure team. (New Builds: Ovation of the Seas, Harmony of the Seas. Dry Docks: Voyager of the Seas, Explorer of the Seas, Nordic Empress, Jewel of the Seas)
-2015 - Assistant Dining Room Manager 
-            In charge of dining room admin and floor operation.      
-2011 - Head Waiter
-            Dining Room floor management. 
-2010 - Restaurant Operations Coordinator 
-            Dining Room admin operation.
-2009 - Waiter 
-Superonline (Internet Service Provider),
-Network Operation Center (NOC)
-2007 – Network Support 
-Kempinski Hotel Barbaros Bay Bodrum,
-2005 - Waiter
-World of Wonders Antalya/Bodrum,
-2003 - Waiter
-Ideefixe (Electronic Commerce),
-Call Center
-2000 - Call Center Team Leader 
 
-Education	Istanbul University – ME Mine Engineering (ISCED Code: 52)
-2000-2007 (Master Degree)
-Anadolu University – BBA Business Administration (ISCED Code: 34)
-2003-2008 (Bachelor Degree)
 
-Certificates	Tableau Desktop v9 – License UC-NR52T8TK
-Google Analytics Certified - Google
-Google Tag Manager Certified - Google
-Military Service	Mandatory army duty.
-Sergeant Rank
-North Cyprus Guzelyurt Army Base
-Achievements & Hobbies	Various achievements in chess tournaments.
-Soccer, cycling, chess, reading.
-
-My favorite color is blue, black and light pink.
+My favorite colors are blue, black and light pink.
