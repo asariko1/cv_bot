@@ -1,138 +1,47 @@
 import streamlit as st
-import os
-from dotenv import load_dotenv
-
-# 1. IMPORTS (The "Guest List")
-from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
-from langchain_community.vectorstores import Chroma
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.runnables import RunnablePassthrough
-from langchain_core.output_parsers import StrOutputParser
 from langchain_core.messages import HumanMessage, AIMessage
+from cv_bot import chain
 
-# Define our preferred working model here
-WORKING_MODEL_NAME = "gemini-2.5-flash-lite" # Or whatever name you confirmed works!
+st.set_page_config(page_title="Asariko CV Bot", page_icon="💬", layout="centered")
 
-# 2. SETUP SECRETS & DATA
-load_dotenv()
-user_phone = os.getenv("USER_PHONE")
-user_email = os.getenv("USER_EMAIL")
-contact_info = f"Phone: {user_phone}\nEmail: {user_email}"
-
-# Load the CV text file immediately so the whole script can see it
-if os.path.exists("my_cv.txt"):
-    with open("my_cv.txt", "r") as file:
-        content = file.read()
-else:
-    st.error("Missing my_cv.txt! Please create it in your project folder.")
-    st.stop()
-
-# Prepare the chunks (the "pages" for our librarian)
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
-chunks = text_splitter.split_text(content)
-
-# 3. SET UP THE ENGINE (Cached for performance)
-@st.cache_resource
-def init_rag():
-    embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004")
-    # We use the stable 2.5-flash to avoid the "Limit 0" errors
-    model = ChatGoogleGenerativeAI(model=WORKING_MODEL_NAME)
-    
-    persist_dir = "my_cv_database"
-    
-    # Check if we need to build a new database or load an old one
-    if os.path.exists(persist_dir):
-        vectorstore = Chroma(persist_directory=persist_dir, embedding_function=embeddings)
-    else:
-        vectorstore = Chroma.from_texts(texts=chunks, embedding=embeddings, persist_directory=persist_dir)
-    
-    retriever = vectorstore.as_retriever(search_kwargs={"k": 5})
-    return model, retriever
-
-model, retriever = init_rag()
-
-# 4. CONTEXT COMBINER
-def get_full_context(input_data):
-    actual_question = input_data["question"]
-    docs = retriever.invoke(actual_question)
-    cv_text = "\n\n".join(doc.page_content for doc in docs)
-    return f"{cv_text}\n\nPRIVATE CONTACT INFO:\n{contact_info}"
-
-# 5. UI LAYOUT
-st.set_page_config(page_title="Asar's AI CV", page_icon="🚀")
-st.title("🤖 Chat with Asar's Personal AI")
-
-# Initialize Chat History in Session State
+# ---- Session State ----
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
-# Display previous messages
-for message in st.session_state.chat_history:
-    if isinstance(message, HumanMessage):
-        with st.chat_message("Human"):
-            st.markdown(message.content)
-    else:
-        with st.chat_message("AI"):
-            st.markdown(message.content)
+st.title("Asariko CV Bot")
 
-# 6. THE CONVEYOR BELT (Chain)
-template = """
-You are the personal AI Brand Ambassador for Asar Aygul. 
+# ---- Render history (with icons) ----
+for m in st.session_state.chat_history:
+    if isinstance(m, HumanMessage):
+        with st.chat_message("user"):
+            st.markdown(m.content)
+    elif isinstance(m, AIMessage):
+        with st.chat_message("assistant"):
+            st.markdown(m.content)
 
-STRICT RULES:
-1.  *FACTS:* For ALL factual questions (Education, Experience, Skills, Contact Info), you MUST ONLY use the 'Context from CV' provided below. Do not add anything that is not explicitly there.
-2.  *NO FACTS FROM MEMORY:* Never use your general knowledge to state a fact about Asar.
-3.  *OPINIONS & POLISH ARE YOUR JOB:* You MAY use your general knowledge ONLY to provide positive, professional evaluations (e.g., "Asar's Master's in Mine Engineering demonstrates a strong technical foundation...").
-4.  *PERSONA:* Always speak in the first person ("I," "my," "I have").
+# ---- Bottom input (pinned) ----
+user_input = st.chat_input("Ask about my background, projects, skills…")
 
-Chat History:
-{chat_history}
-
-Context from CV:
-{context}
-
-Question: {question}
-"""
-prompt = ChatPromptTemplate.from_template(template)
-
-chain = (
-    {
-        "context": get_full_context, 
-        "question": lambda x: x["question"],
-        "chat_history": lambda x: x["chat_history"]
-    }
-    | prompt | model | StrOutputParser()
-)
-
-# 7. CHAT INPUT & EXECUTION
-user_query = st.chat_input("Ask me about Asar's experience...")
-
-if user_query:
+if user_input:
     # Show user message immediately
-    with st.chat_message("Human"):
-        st.markdown(user_query)
-    
-    # Run the Chain
+    with st.chat_message("user"):
+        st.markdown(user_input)  # if you want emojy: st.markdown ("🧑‍💻 " + user_input)
+
+    # Run chain
     response = chain.invoke({
-        "question": user_query, 
+        "question": user_input,
         "chat_history": st.session_state.chat_history
     })
-    
-    # Show AI response
-    with st.chat_message("AI"):
-        st.markdown(response)
-    
-    # Add to history
-    st.session_state.chat_history.append(HumanMessage(content=user_query))
+
+    # Show assistant response
+    with st.chat_message("assistant"):
+        st.markdown(response)  # if you want emojy: st.markdown ("🧑🤖 " + user_input)
+
+
+    # Save to memory
+    st.session_state.chat_history.append(HumanMessage(content=user_input))
     st.session_state.chat_history.append(AIMessage(content=response))
 
-# 8. THE SPY HOLE (Debug Mode)
-with st.sidebar:
-    st.divider()
-    with st.expander("🕵️ Debug: Librarian's Search Results"):
-        if user_query:
-            debug_info = get_full_context({"question": user_query})
-            st.write(debug_info)
-        else:
-            st.write("Waiting for a question...")
+    # Keep last 10 messages (same rule)
+    if len(st.session_state.chat_history) > 10:
+        st.session_state.chat_history = st.session_state.chat_history[-10:]
