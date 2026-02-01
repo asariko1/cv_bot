@@ -12,23 +12,10 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-      .block-container {
-        max-width: 820px;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-      }
-
-      .asar-title {
-        font-size: 1.6rem;
-        font-weight: 650;
-        margin: 0;
-        line-height: 1.15;
-      }
-
-      .asar-sub {
-        color: rgba(0,0,0,0.55);
-        margin-top: 0.25rem;
-        margin-bottom: 0.75rem;
+      .block-container { 
+        max-width: 820px; 
+        padding-top: 2.5rem; 
+        padding-bottom: 2rem; 
       }
     </style>
     """,
@@ -40,31 +27,17 @@ if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
 # ---- Header ----
-col1, col2 = st.columns([1, 0.22], vertical_alignment="center")
+top_left, top_right = st.columns([1, 0.22], vertical_alignment="center")
 
-with col1:
-    st.markdown(
-        """
-        <div class="asar-header">
-          <div class="asar-title">Asar’s AI CV Bot</div>
-          <div class="asar-sub">Ask about my background, projects, or skills. Answers are grounded only in my CV.</div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+with top_left:
+    st.title("Asar’s AI CV Bot")
+    st.caption("Ask about my background, projects, or skills. Answers are grounded only in my CV.")
 
-with col2:
+with top_right:
     if st.button("Clear", use_container_width=True):
         st.session_state.chat_history = []
         st.rerun()
-# ---- Render history with avatars ----
-for m in st.session_state.chat_history:
-    if isinstance(m, HumanMessage):
-        with st.chat_message("user", avatar="🧑‍💻"):
-            st.markdown(m.content)
-    elif isinstance(m, AIMessage):
-        with st.chat_message("assistant", avatar="🧠"):
-            st.markdown(m.content)
+
 
 # ---- Bottom input (pinned by Streamlit) ----
 user_input = st.chat_input("Type your question…")
