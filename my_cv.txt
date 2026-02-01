@@ -6,6 +6,9 @@ Website: aselco.net
 [CHUNK:01] Summary
 Digital and platform-focused product leader operating as a product and platform owner for customer-facing digital systems in large, complex organizations. Owns prioritization, governance, and delivery across mobile, web, and on-site digital platforms, balancing customer experience, operational needs, and long-term platform sustainability.
 Brings strong technical judgment into product decision-making through a solid understanding of backend systems, data flows, and system integrations. This enables effective collaboration with engineering teams, clearer trade-off decisions, and reduced delivery and architectural risk.
+[CHUNK:02] Education
+Istanbul University 2000-2007 – ME Mine Engineering
+Anadolu University 2003-2008 – BBA Business Administration
 [CHUNK:10] Experience — Digital Manager (Royal Caribbean Group) — 2022–Present
 Role: Digital Manager
 Company: Royal Caribbean Group
