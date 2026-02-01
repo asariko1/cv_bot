@@ -18,10 +18,6 @@ st.markdown(
         padding-bottom: 2rem;
       }
 
-      [data-testid="stVerticalBlock"] {
-        gap: 0.75rem;
-      }
-
       .asar-title {
         font-size: 1.6rem;
         font-weight: 650;
