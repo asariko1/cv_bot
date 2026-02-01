@@ -46,7 +46,7 @@ if "chat_history" not in st.session_state:
 # ---- Header ----
 col1, col2 = st.columns([1, 0.22], vertical_alignment="center")
 with col1:
-    st.markdown('<p class="asar-title">Asar's AI CV Bot</p>', unsafe_allow_html=True)
+    st.markdown('<p class="asar-title">My AI CV Bot</p>', unsafe_allow_html=True)
     st.markdown('<div class="asar-sub">Ask about my background, projects, skills. I answer using only my CV.</div>', unsafe_allow_html=True)
 
 with col2:
@@ -71,22 +71,20 @@ if user_input:
     with st.chat_message("user", avatar="🧑‍💻"):
         st.markdown(user_input)
 
-    # Run chain
+# Run chain
     response = chain.invoke({
         "question": user_input,
         "chat_history": st.session_state.chat_history
     })
 
     # Show assistant response
-with st.chat_message("assistant", avatar="🤖"):
-    st.markdown(response)
+    with st.chat_message("assistant", avatar="🧠"):
+        st.markdown(response)
 
-# Save to memory
-st.session_state.chat_history.append(HumanMessage(content=user_input))
-st.session_state.chat_history.append(AIMessage(content=response))
+    # Save to memory
+    st.session_state.chat_history.append(HumanMessage(content=user_input))
+    st.session_state.chat_history.append(AIMessage(content=response))
 
     # Keep last 10 messages
     if len(st.session_state.chat_history) > 10:
         st.session_state.chat_history = st.session_state.chat_history[-10:]
-
-        
