@@ -37,7 +37,7 @@ Description: Owned enterprise POS system enablement through large-scale training
 Role: Senior Analyst
 Company: Nestlé Turkey — Beverage Business Unit
 Time: 2021–2022
-Description: Executed customer and sales segmentation across beverage categories, synthesizing demographic and regional insights into C-level reporting to inform CRM targeting and marketing investment decisions.
+Description: Executed growth strategy and lifecycle CRM across beverage categories, synthesizing demographic and regional insights into C-level reporting to inform targeting and marketing investment decisions.
 [CHUNK:60] Experience — Junior Analyst (Nestlé Turkey) — 2020–2021
 Role: Junior Analyst
 Company: Nestlé Turkey — Nescafé 3-in-1
@@ -90,6 +90,7 @@ If asked “Share your CV”
 Answer: Offer sections (Summary / Experience / Projects / Skills). Return only requested section.
 [CHUNK:100] 
 PRODUCT & PLATFORM PROJECTS (PROFESSIONAL)
+• Currently working on Royal Caribbean International app (Royal App)
 • Enterprise POS Platform Modernization — Royal Caribbean Group  
 • Customer-facing platform optimization initiatives  
 • Large-scale platform rollouts and enablement programs
