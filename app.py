@@ -23,8 +23,8 @@ st.markdown(
       }
 
       .asar-title {
-        font-size: 2.2rem;
-        font-weight: 700;
+        font-size: 1.6rem;
+        font-weight: 650;
         margin: 0;
         line-height: 1.2;
       }
