@@ -50,7 +50,7 @@ for m in st.session_state.chat_history:
         with st.chat_message("user", avatar="🧑‍💻"):
             st.markdown(m.content)
     elif isinstance(m, AIMessage):
-        with st.chat_message("assistant", avatar="🤖"):
+        with st.chat_message("assistant", avatar="🧠"):
             st.markdown(m.content)
 
 # ---- Bottom input (pinned by Streamlit) ----
