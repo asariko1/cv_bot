@@ -1,12 +1,8 @@
-langchain
-langchain-google-genai
-langchain-community
-langchain-chroma
-python-dotenv
-chromadb
 streamlit
+python-dotenv
 
+langchain
+langchain-community
+langchain-google-genai
 
-for imports:
-pip install python-dotenv langchain langchain-core langchain-community langchain-text-splitters langchain-google-genai chromadb
-pip installstreamlit
+chromadb
