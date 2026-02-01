@@ -6,6 +6,8 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.messages import HumanMessage, AIMessage
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_core.messages import SystemMessage
 
 load_dotenv()
 
@@ -54,7 +56,7 @@ def format_history(history):
             lines.append(f"Assistant: {m.content}")
     return "\n".join(lines)
 
-template = f"""
+system_text = f"""
 === SYSTEM POLICY (NON-NEGOTIABLE) ===
 {POLICY_BLOCK}
 === END POLICY ===
@@ -103,13 +105,17 @@ Context from CV:
 
 Question: {{question}}
 """
-prompt = ChatPromptTemplate.from_template(template)
+prompt = ChatPromptTemplate.from_messages([
+    ("system", system_text),
+    MessagesPlaceholder("chat_history"),
+    ("human", "Context from CV:\n{context}\n\nQuestion: {question}")
+])
 
 chain = (
     {
         "context": get_full_context,
         "question": lambda x: x["question"],
-        "chat_history": lambda x: format_history(x["chat_history"])
+        "chat_history": lambda x: x["chat_history"],  # pass messages directly
     }
     | prompt
     | model
