@@ -1,5 +1,7 @@
 [CHUNK:00] Candidate Header
 Name: Asar Aygul
+Date of birth: 1982
+Birth City: Istanbul/Turkey
 Primary identity: Digital Manager / Product & Platform Owner (also: Technical Product Manager)
 Locations: Miami, Florida, USA & Istanbul, Turkey (Hybrid/Remote)
 Website: asarico.net
@@ -85,3 +87,8 @@ If asked “Do you code?”
 Answer: Primary role is product/platform ownership; maintains hands-on understanding through independent product execution; uses this to make better trade-offs and reduce delivery risk; does not position as a full-time engineer.
 If asked “Share your CV”
 Answer: Offer sections (Summary / Experience / Projects / Skills). Return only requested section.
+[CHUNK:100] 
+PRODUCT & PLATFORM PROJECTS (PROFESSIONAL)
+• Enterprise POS Platform Modernization — Royal Caribbean Group  
+• Customer-facing platform optimization initiatives  
+• Large-scale platform rollouts and enablement programs

@@ -37,7 +37,7 @@ else:
     vectorstore = Chroma.from_texts(texts=chunks, embedding=embeddings, persist_directory=persist_dir)
     vectorstore.persist()
 
-retriever = vectorstore.as_retriever(search_kwargs={"k": 5})
+retriever = vectorstore.as_retriever(search_kwargs={"k": 8})
 
 def get_full_context(input_data):
     actual_question = input_data["question"]
