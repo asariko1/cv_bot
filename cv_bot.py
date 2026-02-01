@@ -10,11 +10,6 @@ from langchain_core.messages import HumanMessage, AIMessage
 load_dotenv()
 
 WORKING_MODEL_NAME = "gemini-2.5-flash-lite"
-MISSING_PHRASE = "Asar hasn't provided that information yet."
-SHEET_ID = os.getenv("SHEET_ID")
-
-if not SHEET_ID:
-    raise RuntimeError("Missing SHEET_ID in environment (.env)")
 
 if not os.getenv("GOOGLE_API_KEY"):
     raise RuntimeError("Missing GOOGLE_API_KEY in environment (.env)")
@@ -115,11 +110,7 @@ if __name__ == "__main__":
 
         print(f"Bot: {response}")
 
-        # --- Log unanswered questions ---
-        if MISSING_PHRASE in response:
-            from gdrive_log import append_missing_question
-            append_missing_question(SHEET_ID, user_input.strip())
-            print("NOTE: Logged unanswered question")
+
 
         chat_history.append(HumanMessage(content=user_input))
         chat_history.append(AIMessage(content=response))
