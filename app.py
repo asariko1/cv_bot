@@ -2,7 +2,7 @@ import streamlit as st
 from langchain_core.messages import HumanMessage, AIMessage
 from cv_bot import chain
 
-st.set_page_config(page_title="Asar's CV Bot", page_icon="💬")
+st.set_page_config(page_title="Asar's CV Bot", page_icon="🚀")
 
 st.title("Asar’s AI CV Bot")
 st.caption("Ask about my background, projects, or skills. Answers are grounded only in my CV.")
@@ -10,6 +10,13 @@ st.caption("Ask about my background, projects, or skills. Answers are grounded o
 # ---- Session State ----
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
+
+#  Auto-greeting on first load (only once)
+if len(st.session_state.chat_history) == 0:
+    st.session_state.chat_history.append(
+        AIMessage(content="Hello there! 👋 I'm Asar’s AI CV assistant. I can help you learn about my background, experience, or projects. What would you like to know?")
+    )
+
 
 # ---- Clear button (simple, standard) ----
 if st.button("Clear chat"):
