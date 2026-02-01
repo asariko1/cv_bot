@@ -26,7 +26,7 @@ st.markdown(
         font-size: 1.6rem;
         font-weight: 650;
         margin: 0;
-        line-height: 1.2;
+        line-height: 1.15;
       }
 
       .asar-sub {
@@ -49,11 +49,9 @@ col1, col2 = st.columns([1, 0.22], vertical_alignment="center")
 with col1:
     st.markdown(
         """
-        <div>
-          <p class="asar-title">Asar’s AI CV Bot</p>
-          <div class="asar-sub">
-            Ask about my background, projects, or skills. Answers are grounded only in my CV.
-          </div>
+        <div class="asar-header">
+          <div class="asar-title">Asar’s AI CV Bot</div>
+          <div class="asar-sub">Ask about my background, projects, or skills. Answers are grounded only in my CV.</div>
         </div>
         """,
         unsafe_allow_html=True,
@@ -63,7 +61,6 @@ with col2:
     if st.button("Clear", use_container_width=True):
         st.session_state.chat_history = []
         st.rerun()
-
 # ---- Render history with avatars ----
 for m in st.session_state.chat_history:
     if isinstance(m, HumanMessage):
