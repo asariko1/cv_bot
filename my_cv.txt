@@ -17,7 +17,7 @@ Role: Digital Manager
 Company: Royal Caribbean Group
 Time: 2022–Present
 Location: Hybrid (Miami & Istanbul)
-Description: Owns customer-facing digital platforms across mobile, web, and on-site digital displays. Responsible for prioritization and governance based on location and use case, working across product, engineering, operations, marketing, and external vendors to balance experience quality, scalability, and platform sustainability. Currently I am working on project Royal Caribbean International app (Royal App).
+Description: Digital Manager owning customer facing digital platforms across mobile, web, and on-site digital displays. Responsible for prioritization and governance based on location and use case, working across product, engineering, operations, marketing, and vendors to balance experience, scale, and platform sustainability. I am currently optimizing app engagement & conversions for Royal Caribbean International app (Royal App).
 [CHUNK:20] Experience — Business Systems Analyst (Royal Caribbean Cruises Ltd.) — 2017–2019
 Role: Business Systems Analyst — POS Platforms
 Company: Royal Caribbean Cruises Ltd.
