@@ -46,7 +46,17 @@ if "chat_history" not in st.session_state:
 # ---- Header ----
 col1, col2 = st.columns([1, 0.22], vertical_alignment="center")
 with col1:
-    st.markdown('<p class="asar-title">My AI CV Bot</p>', unsafe_allow_html=True)
+    st.markdown(
+    """
+    <div>
+      <p class="asar-title">Asar’s AI CV Bot</p>
+      <div class="asar-sub">
+        Ask about my background, projects, or skills. Answers are grounded only in my CV.
+      </div>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
     st.markdown('<div class="asar-sub">Ask about my background, projects, skills. I answer using only my CV.</div>', unsafe_allow_html=True)
 
 with col2:
