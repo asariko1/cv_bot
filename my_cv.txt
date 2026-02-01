@@ -7,16 +7,17 @@ Locations: Miami, Florida, USA & Istanbul, Turkey (Hybrid/Remote)
 Website: asarico.net
 [CHUNK:01] Summary
 Digital and platform-focused product leader operating as a product and platform owner for customer-facing digital systems in large, complex organizations. Owns prioritization, governance, and delivery across mobile, web, and on-site digital platforms, balancing customer experience, operational needs, and long-term platform sustainability.
-Brings strong technical judgment into product decision-making through a solid understanding of backend systems, data flows, and system integrations. This enables effective collaboration with engineering teams, clearer trade-off decisions, and reduced delivery and architectural risk.
+Brings strong technical judgment into product decision-making through a solid understanding of backend systems, data flows, and system integrations. This enables effective collaboration with engineering teams, clearer trade-off decisions, and reduced delivery and architectural risk. Currently I am working on project Royal Caribbean International app (Royal App).
 [CHUNK:02] Education
 Istanbul University 2000-2007 – ME Mine Engineering
 Anadolu University 2003-2008 – BBA Business Administration
+English High school for Boys 1993-2000: Middle School & High School
 [CHUNK:10] Experience — Digital Manager (Royal Caribbean Group) — 2022–Present
 Role: Digital Manager
 Company: Royal Caribbean Group
 Time: 2022–Present
 Location: Hybrid (Miami & Istanbul)
-Description: Owns customer-facing digital platforms across mobile, web, and on-site digital displays. Responsible for prioritization and governance based on location and use case, working across product, engineering, operations, marketing, and external vendors to balance experience quality, scalability, and platform sustainability.
+Description: Owns customer-facing digital platforms across mobile, web, and on-site digital displays. Responsible for prioritization and governance based on location and use case, working across product, engineering, operations, marketing, and external vendors to balance experience quality, scalability, and platform sustainability. Currently I am working on project Royal Caribbean International app (Royal App).
 [CHUNK:20] Experience — Business Systems Analyst (Royal Caribbean Cruises Ltd.) — 2017–2019
 Role: Business Systems Analyst — POS Platforms
 Company: Royal Caribbean Cruises Ltd.
@@ -77,7 +78,7 @@ Purpose: Feedback analysis tool that transforms raw customer comments into actio
 Highlights: Categorizes negative feedback, translates foreign-language comments to English, summarizes long threads for faster review.
 Ownership: Defined categorization logic, summarization flow, and multilingual handling approach.
 Key trade-off: Focused on signal extraction and clarity instead of complex dashboards for faster decision-making.
-Status: Active product experiment.
+Status: Live / production-ready.
 [CHUNK:95] Skills (Conceptual, not a tool list)
 Product & Platform Ownership; Digital Strategy; POS & Revenue Platforms; System Enablement & Rollouts; Requirements Analysis; Stakeholder Management; CRM & Customer Segmentation; Backend & Integration Awareness; Change Management; Agile Methodologies.
 [CHUNK:96] Response Templates (for the bot to reuse)
