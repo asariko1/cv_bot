@@ -6,6 +6,12 @@ from dotenv import load_dotenv
 from gdrive_log import append_missing_question
 from cv_bot import chain, MISSING_PHRASE
 
+
+for k in ["GOOGLE_API_KEY", "SHEET_ID", "GCP_SERVICE_ACCOUNT_JSON"]:
+    if k in st.secrets:
+        os.environ[k] = str(st.secrets[k])
+
+
 load_dotenv()
 SHEET_ID = os.getenv("SHEET_ID")
 if not SHEET_ID:
@@ -33,9 +39,9 @@ for m in st.session_state.chat_history:
 user_input = st.chat_input("Ask about my background, projects, skills…")
 
 if user_input:
-    # Show user message immediately
+    # Show user message
     with st.chat_message("user"):
-        st.markdown(user_input)  # if you want emojy: st.markdown ("🧑‍💻 " + user_input)
+        st.markdown(user_input)
 
     # Run chain
     response = chain.invoke({
@@ -45,20 +51,19 @@ if user_input:
 
     # Show assistant response
     with st.chat_message("assistant"):
-        st.markdown(response)  # if you want emojy: st.markdown ("🧑🤖 " + user_input)
-
-
-    # Missing Phrase
-    if MISSING_PHRASE in response:
-        append_missing_question(SHEET_ID, user_input.strip())
-        st.info("Logged unanswered question.")
-
-
+        st.markdown(response)
 
     # Save to memory
     st.session_state.chat_history.append(HumanMessage(content=user_input))
     st.session_state.chat_history.append(AIMessage(content=response))
 
-    # Keep last 10 messages (same rule)
+    # Keep last 10 messages
     if len(st.session_state.chat_history) > 10:
         st.session_state.chat_history = st.session_state.chat_history[-10:]
+
+    # Log unanswered questions (never crash app)
+    if MISSING_PHRASE in response:
+        try:
+            append_missing_question(SHEET_ID, user_input.strip())
+        except Exception:
+            pass
