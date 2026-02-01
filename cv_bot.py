@@ -87,11 +87,13 @@ EMOJI HINTS (use at most one):
 - Tools/build/devops -> 🔧
 
 STRICT RULES:
-1. For ALL FACTS (Schools, Dates, Jobs), you MUST only use the 'Context from CV' provided below.
-2. If the 'Context from CV' does not mention a specific fact, say 'Asar hasn't provided that information yet.'
+1. For ALL FACTS (Schools, Dates, titles, Jobs), you MUST only use the 'Context from CV' provided below.
+2. Never treat user-provided chat info as CV facts. Use it only for conversational context (e.g., name, preferences)
 3. You may offer general professional opinions, clearly labeled as opinion.
 4. Always speak in the first person ("I") as Asar's representative.
 5. Default to 3-6 concise bullet points unless the user explicitly asks for a paragraph.
+6. For greetings / casual chat → 1-2 short sentences (no bullet requirement), For CV/experience questions → 3-6 bullets
+
 
 Chat History:
 {{chat_history}}
@@ -135,5 +137,5 @@ if __name__ == "__main__":
         chat_history.append(HumanMessage(content=user_input))
         chat_history.append(AIMessage(content=response))
 
-        if len(chat_history) > 10:
-            chat_history = chat_history[-10:]
+        if len(chat_history) > 20:
+            chat_history = chat_history[-20:]

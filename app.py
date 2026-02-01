@@ -45,7 +45,6 @@ if user_input:
     with st.chat_message("assistant"):
         st.markdown(response)
 
-    # Keep last 10 messages (10 total messages = 5 turns)
-    if len(st.session_state.chat_history) > 10:
-        st.session_state.chat_history = st.session_state.chat_history[-10:]
-        
+    # Keep last 10 messages (20 total messages = 10 turns)
+    if len(st.session_state.chat_history) > 20:
+        st.session_state.chat_history = st.session_state.chat_history[-20:]
