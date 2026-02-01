@@ -40,3 +40,4 @@ venv.bak/
 .streamlit/secrets.toml
 service_account.json
 gdrive_logger_sa.json
+my_cv_database
