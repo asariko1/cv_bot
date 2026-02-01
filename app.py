@@ -36,22 +36,25 @@ for msg in st.session_state.chat_history:
 user_input = st.chat_input("Type your question…")
 
 if user_input:
-    # Show + store user message
-    st.session_state.chat_history.append(HumanMessage(content=user_input))
+    # Show user message immediately
     with st.chat_message("user"):
         st.markdown(user_input)
 
-    # Run chain
+    # IMPORTANT: use history BEFORE adding this user input
+    history_before = list(st.session_state.chat_history)
+
     response = chain.invoke({
         "question": user_input,
-        "chat_history": st.session_state.chat_history
+        "chat_history": history_before
     })
 
-    # Show + store assistant message
-    st.session_state.chat_history.append(AIMessage(content=response))
     with st.chat_message("assistant"):
         st.markdown(response)
 
-    # Keep last 10 messages (20 total messages = 10 turns)
+    # Now save both to memory (in correct order)
+    st.session_state.chat_history.append(HumanMessage(content=user_input))
+    st.session_state.chat_history.append(AIMessage(content=response))
+
+    # Keep last 20 messages (10 turns)
     if len(st.session_state.chat_history) > 20:
         st.session_state.chat_history = st.session_state.chat_history[-20:]

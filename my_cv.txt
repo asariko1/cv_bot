@@ -17,37 +17,45 @@ Role: Digital Manager
 Company: Royal Caribbean Group
 Time: 2022–Present
 Location: Hybrid (Miami & Istanbul)
+Market: US & Mediterranean
 Description: Digital Manager owning customer facing digital platforms across mobile, web, and on-site digital displays. Responsible for prioritization and governance based on location and use case, working across product, engineering, operations, marketing, and vendors to balance experience, scale, and platform sustainability. I am currently optimizing app engagement & conversions for Royal Caribbean International app (Royal App).
 [CHUNK:20] Experience — Business Systems Analyst (Royal Caribbean Cruises Ltd.) — 2017–2019
 Role: Business Systems Analyst — POS Platforms
 Company: Royal Caribbean Cruises Ltd.
 Time: 2017–2019
+Market: Australia & New Zealand
 Description: Focused on POS and revenue-related systems across multiple international markets. Delivered structured analysis and reporting to identify revenue opportunities and product performance across Europe, Caribbean East, and Caribbean West. Partnered with business stakeholders and regional teams to translate commercial needs into system outputs supporting C-level decision-making.
 [CHUNK:30] Experience — Travelling F&B Manager (Royal Caribbean Cruises Ltd.) — 2016–2017
 Role: Travelling F&B Manager — System, Project & Training (POS enablement)
 Company: Royal Caribbean Cruises Ltd.
 Time: Mar 2016–Jun 2017
+Market: North Europe
 Description: Led POS system implementation and enablement across multiple ships, collaborating with implementation and infrastructure teams to support five ship rollouts, including Harmony of the Seas, the largest cruise ship in operation at the time. Contributed to operational planning for new builds and dry dock projects, enabling large-scale system adoption across onboard food and beverage operations.
 [CHUNK:40] Experience — Training Manager (Royal Caribbean Cruises Ltd.) — 2015–2016
 Role: Training Manager — POS Systems
 Company: Royal Caribbean Cruises Ltd.
 Time: 2015–2016
+Market: US
 Description: Owned enterprise POS system enablement through large-scale training programs supporting platform rollout and consistent system usage across operations, reaching 2,000+ employees.
 [CHUNK:50] Experience — Senior Analyst (Nestlé Turkey) — 2021–2022
 Role: Senior Analyst
 Company: Nestlé Turkey — Beverage Business Unit
 Time: 2021–2022
+Location: Istanbul, Turkey
+Market: Turkey
 Description: Executed growth strategy and lifecycle CRM across beverage categories, synthesizing demographic and regional insights into C-level reporting to inform targeting and marketing investment decisions.
 [CHUNK:60] Experience — Junior Analyst (Nestlé Turkey) — 2020–2021
 Role: Junior Analyst
 Company: Nestlé Turkey — Nescafé 3-in-1
 Time: 2020–2021
 Location: Istanbul, Turkey
+Market: Turkey
 Description: Analyzed consumer purchase behavior and developed data-driven recommendations to support category growth, penetration, and CRM-aligned promotional strategies.
 [CHUNK:70] Experience — Assistant Dining Room Manager (Royal Caribbean Cruises Ltd.) — 2009–2015
 Role: Assistant Dining Room Manager
 Company: Royal Caribbean Cruises Ltd.
 Time: Dec 2009–2015
+Market: US
 Description: Supported restaurant operations across multiple ships, contributing to operational planning, readiness, and post-launch stabilization for four new ship openings and seven dry dock projects, while managing live cruise operations in high-volume guest environments.
 [CHUNK:80] Experience — Network Operations Specialist (Turkcell Superonline) — 2005–2007
 Role: Network Operations Specialist (NOC)
@@ -79,9 +87,15 @@ Highlights: Categorizes negative feedback, translates foreign-language comments 
 Ownership: Defined categorization logic, summarization flow, and multilingual handling approach.
 Key trade-off: Focused on signal extraction and clarity instead of complex dashboards for faster decision-making.
 Status: Live / production-ready.
-[CHUNK:95] Skills (Conceptual, not a tool list)
+[CHUNK:94] Project - ChatBot
+Name: MyCV ChatBot
+Purpose:
+Highlights: 
+Key trade-off: 
+Status: Live / production-ready.
+[CHUNK:96] Skills (Conceptual, not a tool list)
 Product & Platform Ownership; Digital Strategy; POS & Revenue Platforms; System Enablement & Rollouts; Requirements Analysis; Stakeholder Management; CRM & Customer Segmentation; Backend & Integration Awareness; Change Management; Agile Methodologies.
-[CHUNK:96] Response Templates (for the bot to reuse)
+[CHUNK:97] Response Templates (for the bot to reuse)
 If asked “How technical are you?”
 Answer: Product/platform owner with strong technical judgment; understands backend systems, data flows, integrations; independent products provide hands-on exposure to constraints and trade-offs; collaborates effectively with engineering.
 If asked “Do you code?”
