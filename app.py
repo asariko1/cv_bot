@@ -27,7 +27,7 @@ with st.sidebar:
     🌐 [asariko.net](https://asariko.net)
     
     ---
-    **Current Focus:** Asar is currently leading mobile and web platforms at **Royal Caribbean Group**, managing regional operations.
+    **Current Focus:** Asar is currently leading mobile and web platforms at Royal Caribbean Group, managing regional operations.
     ---
     **Global Market Experience:** US, Mediterranean, North Europe, Australia/NZ.
 
@@ -85,25 +85,25 @@ st.session_state.pill_selection = None
 cols = st.columns(2)
 
 with cols[0]:
-    if st.button("🚢 Royal Caribbean", use_container_width=True):
+    if st.button("🚢 Royal", use_container_width=True):
         st.session_state.pill_selection = "Tell me about your role at Royal Caribbean."
         st.rerun()
     if st.button("🏢 Nestlé", use_container_width=True):
         st.session_state.pill_selection = "Summarize your Nestlé experience."
         st.rerun()
-    if st.button("🗂️ CRM / Analytics", use_container_width=True):
-        st.session_state.pill_selection = "Describe your CRM experience."
+    if st.button("📶 Turkcell", use_container_width=True):
+        st.session_state.pill_selection = "Summarize your Tukcell/Superonline experience and what outcomes you drove."
         st.rerun()
-    if st.button("🛠️ Top Projects", use_container_width=True):
-        st.session_state.pill_selection = "Tell me about your top projects."
+    if st.button("🗂️ CRM", use_container_width=True):
+        st.session_state.pill_selection = "Describe your CRM experience."
         st.rerun()
 
 with cols[1]:
     if st.button("📱 Apps", use_container_width=True):
         st.session_state.pill_selection = "What apps have you worked on?"
         st.rerun()
-    if st.button("🧩 Platform", use_container_width=True):
-        st.session_state.pill_selection = "Describe your platform trade-off decisions."
+    if st.button("🛠️ Projects", use_container_width=True):
+        st.session_state.pill_selection = "Tell me about your top projects."
         st.rerun()
     if st.button("🧠 Skills", use_container_width=True):
         st.session_state.pill_selection = "What are your strongest skills?"
