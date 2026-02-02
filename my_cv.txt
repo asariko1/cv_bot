@@ -80,7 +80,7 @@ Personal Projects:
 • Iora — subscription tracking and visualization tool
 • EchoPath — customer feedback analysis and summarization tool
 • My ChatBot — AI-powered CV and portfolio assistant built with LLMs and retrieval-based reasoning
-
+• RedCast — Mobile platform prototype (React Native/Expo) designed for audio-based content delivery.
 
 ========================
 EDUCATION
