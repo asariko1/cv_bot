@@ -18,9 +18,9 @@ with st.sidebar:
     
     ---
     **Global Market Experience:** US, Mediterranean, North Europe, Australia/NZ.
-    **Languages:** Turkish (Mother Language) English (Proficiency)
-
+    **Languages:** Turkish - English
     """)
+
     
     if st.button("Clear Chat History"):
         st.session_state.chat_history = []
