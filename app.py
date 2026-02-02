@@ -2,6 +2,36 @@ import streamlit as st
 from langchain_core.messages import HumanMessage, AIMessage
 from cv_bot import chain
 
+# --- CSS Button Lay out ---
+st.markdown("""
+    <style>
+    /* Reduce button height and padding */
+    div.stButton > button {
+        height: 3em;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        border-radius: 8px;
+        border: 1px solid #dfe1e5;
+        background-color: white;
+        color: #2c3e50; /* Your preferred midnight blue */
+        font-weight: 500;
+        font-size: 14px;
+        transition: all 0.2s ease;
+    }
+    
+    /* Subtle hover effect for modern feel */
+    div.stButton > button:hover {
+        border-color: #34495e;
+        background-color: #f8f9fa;
+        color: #34495e;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+    # --- End of CSS design ---
+
+
+
 st.set_page_config(page_title="Asar's CV Bot", page_icon="🚀")
 
 # ---- SIDEBAR: Contact & Location Info ----
@@ -17,8 +47,7 @@ with st.sidebar:
     🌐 [asariko.net](https://asariko.net)
     
     ---
-    **Current Focus:**
-    Asar is currently leading mobile and web platforms at **Royal Caribbean Group**, managing regional operations.
+    **Current Focus:** Asar is currently leading mobile and web platforms at **Royal Caribbean Group**, managing regional operations.
     ---
     **Global Market Experience:** US, Mediterranean, North Europe, Australia/NZ.
 
