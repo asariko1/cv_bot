@@ -76,6 +76,8 @@ with cols[2]:
     if st.button("🌍 Global Reach"):
         pill_selection = "Which international markets have you worked in?"
 
+
+
 # If a pill is clicked, treat it like user input
 if pill_selection:
     user_input = pill_selection

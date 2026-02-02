@@ -60,12 +60,19 @@ for msg in st.session_state.chat_history:
         with st.chat_message("assistant"):
             st.markdown(msg.content)
 
-
 # ---- QUICK REPLIES (Pills) ----
-st.write("---") # Visual separator
-#cols = st.columns(3)
-pill_selection = None
-# Define the 2-column layout
+# 1. INITIALIZE SESSION STATE (Put this near your chat_history initialization)
+if "pill_selection" not in st.session_state:
+    st.session_state.pill_selection = None
+
+# ---- Pills buttons starts from here ----
+st.write("---") 
+
+# 2. CAPTURE & CLEAR: Pull the selection from session state and reset it immediately
+pill_selection = st.session_state.pill_selection
+st.session_state.pill_selection = None
+
+# 3. UI LAYOUT: 2-Column Button Grid
 col1, col2 = st.columns(2)
 
 with col1:
@@ -96,44 +103,35 @@ with col2:
         st.session_state.pill_selection = "Which international markets have you worked in?"
         st.rerun()
 
-# If a pill is clicked, treat it like user input
-if pill_selection:
-    user_input = pill_selection
-# ---- END QUICK REPLIES (Pills) ----
+# ---- PROCESS INPUT (Typing OR Button Click) ----
+chat_input = st.chat_input("Type your question...")
 
-
-
-
-# ---- Bottom input ----
-# ---- Process Input (Typing OR Pill Click) ----
-# This line captures the text input from the user
-chat_input = st.chat_input("Type your question…")
-
-# This logic decides which input to use: the typed text or the pill clicked
+# This chooses whichever input is active (the text box or the button clicked)
 final_input = chat_input or pill_selection
 
 if final_input:
-    # 1. Show user message immediately
+    # Show user message
     with st.chat_message("user"):
         st.markdown(final_input)
 
-    # 2. Get the response from your LangChain bot
-    # We use chat_history before adding the current turn to memory
+    # Get response from the bot
     history_before = list(st.session_state.chat_history)
 
     with st.chat_message("assistant"):
+        # This calls your langchain chain in cv_bot.py
         response = chain.invoke({
             "question": final_input,
             "chat_history": history_before
         })
         st.markdown(response)
 
-    # 3. Save both to memory
+    # Save to history
     st.session_state.chat_history.append(HumanMessage(content=final_input))
     st.session_state.chat_history.append(AIMessage(content=response))
 
-    # 4. Limit history and Rerun to refresh the chat UI
+    # Keep history manageable (last 20 messages)
     if len(st.session_state.chat_history) > 20:
         st.session_state.chat_history = st.session_state.chat_history[-20:]
     
+    # Rerun to update the UI
     st.rerun()
