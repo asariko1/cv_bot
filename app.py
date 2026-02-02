@@ -3,40 +3,39 @@ from langchain_core.messages import HumanMessage, AIMessage
 from cv_bot import chain
 
 # --- 2026 Minimalist CSS Button Layout ---
-st.markdown(f"""
+st.markdown("""
     <style>
-    /* 1. FORCE 2 COLUMNS ON MOBILE (Fixes the vertical stack) */
-    [data-testid="column"] {{
+    /* 1. FORCE THE GRID: Stop vertical stacking on mobile */
+    [data-testid="column"] {
         width: calc(50% - 1rem) !important;
         flex: 1 1 calc(50% - 1rem) !important;
         min-width: calc(50% - 1rem) !important;
-    }}
+    }
+
+    /* 2. SLIM BUTTONS: Remove the bulk */
+    div.stButton > button {
+        border-radius: 4px !important;
+        height: 2.2rem !important; /* Extremely slim height */
+        line-height: 1 !important;
+        padding: 0px !important;
+        font-size: 12px !important;
+        background-color: #ffffff !important;
+        color: #2c3e50 !important; /* Midnight Blue */
+        border: 1px solid #e0e0e0 !important;
+        box-shadow: none !important;
+    }
+
+    /* 3. TIGHTEN SPACING: Pull everything up */
+    [data-testid="stHorizontalBlock"] {
+        gap: 0.4rem !important;
+        margin-bottom: -0.8rem !important;
+    }
     
-    /* 2. GLOBAL BUTTON STYLING: Slim & Professional */
-    div.stButton > button {{
-        width: 100%;
-        border-radius: 6px; 
-        height: 2.4rem;     /* Slimmer height to save screen space */
-        padding: 0px 5px;
-        font-size: 13px;
-        font-weight: 500;
-        background-color: white;
-        color: #2c3e50;    /* Your Midnight Blue */
-        border: 1px solid #dfe1e5;
-        transition: all 0.3s ease;
-    }}
-
-    /* 3. HOVER EFFECT */
-    div.stButton > button:hover {{
-        border-color: #34495e;
-        color: #34495e;
-        background-color: #f8f9fa;
-    }}
-
-    /* 4. REDUCE WHITE SPACE between rows */
-    [data-testid="stHorizontalBlock"] {{
-        gap: 0.5rem !important;
-    }}
+    /* Remove default Streamlit padding that causes extra white space */
+    .main .block-container {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
     </style>
     """, unsafe_allow_html=True)
 # --- End of Updated CSS design ---
