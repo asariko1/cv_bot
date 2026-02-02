@@ -26,7 +26,7 @@ st.markdown("""
         padding: 0px 2px !important; /* Minimal horizontal padding */
         
         /* FONT SCALING FIX */
-        font-size: 11px !important; /* Slightly smaller to fit long words */
+        font-size: 9px !important; /* Slightly smaller to fit long words */
         white-space: nowrap !important; /* Prevents text from breaking into 2 lines */
         overflow: hidden !important;
         text-overflow: ellipsis !important; /* Adds '...' if text is way too long */
