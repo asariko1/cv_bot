@@ -75,10 +75,10 @@ if len(st.session_state.chat_history) == 0:
     )
 
 
-# ---- Clear button (simple, standard) ----
-if st.button("Clear chat"):
-    st.session_state.chat_history = []
-    st.rerun()
+# ---- Clear button (simple, standard) ---- (We placed to sidebar, no need this one.)
+#if st.button("Clear chat"):
+ #   st.session_state.chat_history = []
+  #  st.rerun()
 
 # ---- Render history (this is the part you were missing) ----
 for msg in st.session_state.chat_history:
