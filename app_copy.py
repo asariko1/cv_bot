@@ -97,28 +97,33 @@ for msg in st.session_state.chat_history:
             st.markdown(msg.content)
 
 # ---- Bottom input ----
+# -----------------------------
+# Input + processing (typed or queued)
+# -----------------------------
 user_input = st.chat_input("Type your question…")
 
+# If a quick button was clicked, treat it as user input
+if st.session_state.queued_input and not user_input:
+    user_input = st.session_state.queued_input
+    st.session_state.queued_input = None
+
 if user_input:
-    # Show user message immediately
+    # store + show user
+    st.session_state.chat_history.append(HumanMessage(content=user_input))
     with st.chat_message("user"):
         st.markdown(user_input)
 
-    # IMPORTANT: use history BEFORE adding this user input
-    history_before = list(st.session_state.chat_history)
-
+    # run chain
     response = chain.invoke({
         "question": user_input,
-        "chat_history": history_before
+        "chat_history": st.session_state.chat_history
     })
 
+    # store + show assistant
+    st.session_state.chat_history.append(AIMessage(content=response))
     with st.chat_message("assistant"):
         st.markdown(response)
 
-    # Now save both to memory (in correct order)
-    st.session_state.chat_history.append(HumanMessage(content=user_input))
-    st.session_state.chat_history.append(AIMessage(content=response))
-
-    # Keep last 20 messages (10 turns)
+    # keep last 20 messages (10 turns)
     if len(st.session_state.chat_history) > 20:
         st.session_state.chat_history = st.session_state.chat_history[-20:]
