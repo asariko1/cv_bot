@@ -11,7 +11,7 @@ from langchain_core.messages import SystemMessage
 
 load_dotenv()
 
-WORKING_MODEL_NAME = "gemini-2.5-flash-lite"
+WORKING_MODEL_NAME = "gemini-3-flash-preview"
 
 if not os.getenv("GOOGLE_API_KEY"):
     raise RuntimeError("Missing GOOGLE_API_KEY in environment (.env)")
