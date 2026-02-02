@@ -1,110 +1,109 @@
-[CHUNK:00] Candidate Header
 Name: Asar Aygul
-Date of birth: 1982
-Birth City: Istanbul/Turkey
-Primary identity: Digital Manager / Product & Platform Owner (also: Technical Product Manager)
-Locations: Miami, Florida, USA & Istanbul, Turkey (Hybrid/Remote)
-Website: asarico.net
-[CHUNK:01] Summary
-Digital and platform-focused product leader operating as a product and platform owner for customer-facing digital systems in large, complex organizations. Owns prioritization, governance, and delivery across mobile, web, and on-site digital platforms, balancing customer experience, operational needs, and long-term platform sustainability.
-Brings strong technical judgment into product decision-making through a solid understanding of backend systems, data flows, and system integrations. This enables effective collaboration with engineering teams, clearer trade-off decisions, and reduced delivery and architectural risk. Currently I am working on project Royal Caribbean International app (Royal App).
-[CHUNK:02] Education
-Istanbul University 2000-2007 – ME Mine Engineering
-Anadolu University 2003-2008 – BBA Business Administration
-English High school for Boys 1993-2000: Middle School & High School
-[CHUNK:10] Experience — Digital Manager (Royal Caribbean Group) — 2022–Present
-Role: Digital Manager
-Company: Royal Caribbean Group
-Time: 2022–Present
-Location: Hybrid (Miami & Istanbul)
-Market: US & Mediterranean
-Description: Digital Manager owning customer facing digital platforms across mobile, web, and on-site digital displays. Responsible for prioritization and governance based on location and use case, working across product, engineering, operations, marketing, and vendors to balance experience, scale, and platform sustainability. I am currently optimizing app engagement & conversions for Royal Caribbean International app (Royal App).
-[CHUNK:20] Experience — Business Systems Analyst (Royal Caribbean Cruises Ltd.) — 2017–2019
-Role: Business Systems Analyst — POS Platforms
-Company: Royal Caribbean Cruises Ltd.
-Time: 2017–2019
-Market: Australia & New Zealand
-Description: Focused on POS and revenue-related systems across multiple international markets. Delivered structured analysis and reporting to identify revenue opportunities and product performance across Europe, Caribbean East, and Caribbean West. Partnered with business stakeholders and regional teams to translate commercial needs into system outputs supporting C-level decision-making.
-[CHUNK:30] Experience — Travelling F&B Manager (Royal Caribbean Cruises Ltd.) — 2016–2017
-Role: Travelling F&B Manager — System, Project & Training (POS enablement)
-Company: Royal Caribbean Cruises Ltd.
-Time: Mar 2016–Jun 2017
-Market: North Europe
-Description: Led POS system implementation and enablement across multiple ships, collaborating with implementation and infrastructure teams to support five ship rollouts, including Harmony of the Seas, the largest cruise ship in operation at the time. Contributed to operational planning for new builds and dry dock projects, enabling large-scale system adoption across onboard food and beverage operations.
-[CHUNK:40] Experience — Training Manager (Royal Caribbean Cruises Ltd.) — 2015–2016
-Role: Training Manager — POS Systems
-Company: Royal Caribbean Cruises Ltd.
-Time: 2015–2016
-Market: US
-Description: Owned enterprise POS system enablement through large-scale training programs supporting platform rollout and consistent system usage across operations, reaching 2,000+ employees.
-[CHUNK:50] Experience — Senior Analyst (Nestlé Turkey) — 2021–2022
-Role: Senior Analyst
-Company: Nestlé Turkey — Beverage Business Unit
-Time: 2021–2022
-Location: Istanbul, Turkey
-Market: Turkey
-Description: Executed growth strategy and lifecycle CRM across beverage categories, synthesizing demographic and regional insights into C-level reporting to inform targeting and marketing investment decisions.
-[CHUNK:60] Experience — Junior Analyst (Nestlé Turkey) — 2020–2021
-Role: Junior Analyst
-Company: Nestlé Turkey — Nescafé 3-in-1
-Time: 2020–2021
-Location: Istanbul, Turkey
-Market: Turkey
-Description: Analyzed consumer purchase behavior and developed data-driven recommendations to support category growth, penetration, and CRM-aligned promotional strategies.
-[CHUNK:70] Experience — Assistant Dining Room Manager (Royal Caribbean Cruises Ltd.) — 2009–2015
-Role: Assistant Dining Room Manager
-Company: Royal Caribbean Cruises Ltd.
-Time: Dec 2009–2015
-Market: US
-Description: Supported restaurant operations across multiple ships, contributing to operational planning, readiness, and post-launch stabilization for four new ship openings and seven dry dock projects, while managing live cruise operations in high-volume guest environments.
-[CHUNK:80] Experience — Network Operations Specialist (Turkcell Superonline) — 2005–2007
-Role: Network Operations Specialist (NOC)
-Company: Turkcell Superonline
-Time: 2005–2007
-Location: Istanbul, Turkey (On-site)
-Description: Supported network operations through monitoring and incident coordination, acting as a bridge between field operators and backend systems to resolve connectivity and infrastructure issues.
-[CHUNK:90] Independent Product Work — Overview
-Outside of corporate roles, builds small, production-grade digital products to explore system design, backend constraints, and real-world product trade-offs through hands-on execution. This work informs platform decisions and strengthens collaboration with engineering teams.
-Important framing: Independent work is evidence of technical judgment, not the primary professional identity.
-[CHUNK:91] Project — Gymbadi
-Name: Gymbadi
-Purpose: Minimalist workout companion designed to support focus and long-term consistency.
-Highlights: Built-in timers, haptic feedback, muscle progress heatmap visualization; supports progress tracking and motivation.
-Ownership: Defined product scope, user experience principles, and progress visualization model.
-Key trade-off: Prioritized simplicity and habit formation over feature breadth to reduce cognitive load.
-Status: Live / production-ready.
-[CHUNK:92] Project — Iora
-Name: Iora
-Purpose: Lightweight tool to organize and visualize subscription spending.
-Highlights: Manual subscription tracking, reminders before renewal, monthly and yearly spending views, simple graphs.
-Ownership: Owned product concept, information architecture, and spending visualization approach.
-Key trade-off: Chose manual input and clarity over deep integrations to maintain reliability and user trust.
-Status: Live / production-ready.
-[CHUNK:93] Project — EchoPath
-Name: EchoPath
-Purpose: Feedback analysis tool that transforms raw customer comments into actionable insights.
-Highlights: Categorizes negative feedback, translates foreign-language comments to English, summarizes long threads for faster review.
-Ownership: Defined categorization logic, summarization flow, and multilingual handling approach.
-Key trade-off: Focused on signal extraction and clarity instead of complex dashboards for faster decision-making.
-Status: Live / production-ready.
-[CHUNK:94] Project - ChatBot
-Name: MyCV ChatBot
-Purpose:
-Highlights: 
-Key trade-off: 
-Status: Live / production-ready.
-[CHUNK:96] Skills (Conceptual, not a tool list)
-Product & Platform Ownership; Digital Strategy; POS & Revenue Platforms; System Enablement & Rollouts; Requirements Analysis; Stakeholder Management; CRM & Customer Segmentation; Backend & Integration Awareness; Change Management; Agile Methodologies.
-[CHUNK:97] Response Templates (for the bot to reuse)
-If asked “How technical are you?”
-Answer: Product/platform owner with strong technical judgment; understands backend systems, data flows, integrations; independent products provide hands-on exposure to constraints and trade-offs; collaborates effectively with engineering.
-If asked “Do you code?”
-Answer: Primary role is product/platform ownership; maintains hands-on understanding through independent product execution; uses this to make better trade-offs and reduce delivery risk; does not position as a full-time engineer.
-If asked “Share your CV”
-Answer: Offer sections (Summary / Experience / Projects / Skills). Return only requested section.
-[CHUNK:100] 
-PRODUCT & PLATFORM PROJECTS (PROFESSIONAL)
-• Currently working on Royal Caribbean International app (Royal App)
-• Enterprise POS Platform Modernization — Royal Caribbean Group  
-• Customer-facing platform optimization initiatives  
-• Large-scale platform rollouts and enablement programs
+Birth Year: 1982
+
+Primary Role:
+Digital Manager / Product & Platform Owner (Technical Product Manager)
+
+Locations:
+Miami, USA & Istanbul, Turkey (Hybrid)
+
+Markets Supported:
+United States, Mediterranean, Northern Europe, Australia & New Zealand (ANZ)
+
+Contact:
+Website: https://asariko.net
+Email: asaraygul@gmail.com
+
+
+========================
+PROFESSIONAL SUMMARY
+========================
+I’m a digital product and platform owner focused on large-scale customer-facing systems. I currently work on the Royal Caribbean International app, combining product ownership with strong technical judgment and a solid understanding of backend systems, data flows, and integrations. I’ve supported multi-region platforms across the US, Mediterranean, Northern Europe, and ANZ.
+
+
+========================
+CURRENT ROLE
+========================
+Digital Manager — Royal Caribbean Group  
+(2022 – Present)
+
+Own product and platform delivery for customer-facing digital systems, including mobile and web platforms.
+Responsible for prioritization, governance, and roadmap execution across multiple regions and stakeholders.
+Lead platform decision-making by balancing customer experience, operational needs, and long-term system sustainability.
+Work closely with engineering teams using strong backend and integration awareness to guide trade-offs and reduce delivery risk.
+Currently focused on the Royal Caribbean International App (Royal App).
+
+
+========================
+PREVIOUS ROLES (SELECTED)
+========================
+
+Before my current role, I held several analytics and systems-focused positions that shaped my approach to product and platform ownership:
+
+• Senior Analyst – Nestlé Turkey (2021–2022): Led CRM analytics, customer segmentation, and insight-driven reporting to support growth and targeting strategies.  
+• Junior Analyst – Nestlé Turkey (2020–2021): Analyzed consumer behavior and supported CRM and promotional optimization initiatives.  
+• Business Systems Analyst – Royal Caribbean Cruises Ltd. (2017–2019): Worked on POS and customer-facing systems, focusing on business processes and system integration.  
+• Training Manager – Royal Caribbean Cruises Ltd. (2015–2016): Led large-scale enterprise system training programs supporting global platform rollouts.
+Training Manager — Royal Caribbean (United States)  
+(2015 – 2016)  
+Led training programs focused on operational consistency, service quality, and team performance.
+
+Dining Room Manager — Royal Caribbean  
+(2009 – 2015)  
+Managed large onboard teams and day-to-day guest-facing operations in high-volume environments.
+
+Network Operations Specialist — Turkcell Superonline  
+(2005 – 2007)  
+Worked on network operations, monitoring, and infrastructure support within a telecom environment.
+
+
+========================
+PROFESSIONAL PLATFORM PROJECTS
+========================
+• Royal Caribbean International App (Royal App)
+• Enterprise-scale customer-facing digital platforms
+• Platform governance and rollout initiatives
+• Multi-region platform operations and optimization
+
+
+========================
+INDEPENDENT PRODUCT WORK (SUPPORTING)
+========================
+Independent product work is used to explore system design, backend constraints, and product trade-offs.  
+This work supports technical judgment, architectural awareness, and effective collaboration with engineering teams.
+
+Personal Projects:
+• Gymbadi — minimalist workout companion
+• Iora — subscription tracking and visualization tool
+• EchoPath — customer feedback analysis and summarization tool
+• My ChatBot — AI-powered CV and portfolio assistant built with LLMs and retrieval-based reasoning
+
+
+========================
+EDUCATION
+========================
+Istanbul University — Mine Engineering  
+Anadolu University — Business Administration  
+English High School for Boys — Middle & High School
+
+
+========================
+CORE SKILLS & FOCUS AREAS
+========================
+• Product & Platform Ownership
+• Digital Strategy
+• Backend & Integration Awareness
+• System Architecture Judgment
+• Stakeholder & Cross-Functional Collaboration
+• Delivery Governance & Prioritization
+• Customer Experience Optimization
+• Multi-Region Platform Operations
+
+========================
+REGIONAL EXPERIENCE
+========================
+I’ve supported digital platforms and initiatives across:
+• United States  
+• Mediterranean region  
+• Northern Europe  
+• Australia & New Zealand (ANZ)
