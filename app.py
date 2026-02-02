@@ -4,6 +4,28 @@ from cv_bot import chain
 
 st.set_page_config(page_title="Asar's CV Bot", page_icon="🚀")
 
+# ---- SIDEBAR: Contact & Location Info ----
+with st.sidebar:
+    st.image("https://github.com/asariko1.png", width=100) # Your GitHub Profile Pic
+    st.title("Asar Aygul")
+    st.subheader("Digital Manager")
+    
+    st.markdown("""
+    📍 **Locations:** Istanbul 🇹🇷 / Miami 🇺🇸  
+    📧 **Email:** asaraygul@gmail.com  
+    🔗 [LinkedIn Profile](https://www.linkedin.com/in/asar-aygul)  
+    🌐 [asariko.net](https://asariko.net)
+    
+    ---
+    **Global Market Experience:** US, Mediterranean, North Europe, Australia/NZ.
+    """)
+    
+    if st.button("Clear Chat History"):
+        st.session_state.chat_history = []
+        st.rerun()
+
+# ----END of SIDEBAR: Contact & Location Info ----
+
 st.title("Asar’s AI CV Bot")
 st.caption("Ask about my background, projects, or skills. Answers are grounded only in my CV.")
 
