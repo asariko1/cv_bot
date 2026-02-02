@@ -1,6 +1,8 @@
 import streamlit as st
 from langchain_core.messages import HumanMessage, AIMessage
 from cv_bot import chain
+from dotenv import load_dotenv
+load_dotenv()
 
 st.set_page_config(page_title="Asar's CV Bot", page_icon="🚀")
 
@@ -31,9 +33,47 @@ with st.sidebar:
 st.title("Asar’s AI CV Bot")
 st.caption("Ask about my background, projects, or skills. Answers are grounded only in my CV.")
 
+# -----------------------------
+# Quick prompts (pill-like buttons)
+# -----------------------------
+st.markdown("#### Quick prompts")
+q1, q2, q3 = st.columns(3)
+
+def queue(text: str):
+    st.session_state.queued_input = text
+
+with q1:
+    if st.button("🚢 Royal Caribbean", use_container_width=True):
+        queue("Tell me about your current role at Royal Caribbean and what you own end-to-end.")
+    if st.button("📱 Apps", use_container_width=True):
+        queue("What apps have you worked on (professional + personal)? Summarize briefly.")
+
+with q2:
+    if st.button("🏢 Nestlé", use_container_width=True):
+        queue("Summarize your Nestlé experience and what outcomes you drove.")
+    if st.button("🧩 Platform/Architecture", use_container_width=True):
+        queue("Describe how you make platform decisions and trade-offs with engineering.")
+
+with q3:
+    if st.button("🗂️ CRM / Analytics", use_container_width=True):
+        queue("Describe your CRM / analytics experience and how you used data to drive decisions.")
+    if st.button("🧠 Skills", use_container_width=True):
+        queue("What are your strongest skills? Keep it recruiter-friendly in bullets.")
+
+st.markdown("---")
+
+# -----------------------------
+# END of Quick prompts (pill-like buttons)
+# -----------------------------
+# After buttons:
+
 # ---- Session State ----
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
+# ---- For bUttons State ----
+if "queued_input" not in st.session_state:
+    st.session_state.queued_input = None
+
 
 #  Auto-greeting on first load (only once)
 if len(st.session_state.chat_history) == 0:
@@ -56,60 +96,29 @@ for msg in st.session_state.chat_history:
         with st.chat_message("assistant"):
             st.markdown(msg.content)
 
-
-# ---- QUICK REPLIES (Pills) ----
-st.write("---") # Visual separator
-cols = st.columns(3)
-pill_selection = None
-
-with cols[0]:
-    if st.button("🛠️ Top Projects"):
-        pill_selection = "Tell me about your top projects like EchoPath and RedCast."
-with cols[1]:
-    if st.button("📊 Experience"):
-        pill_selection = "What was your role at Royal Caribbean Group?"
-with cols[2]:
-    if st.button("🌍 Global Reach"):
-        pill_selection = "Which international markets have you worked in?"
-
-# If a pill is clicked, treat it like user input
-if pill_selection:
-    user_input = pill_selection
-# ---- END QUICK REPLIES (Pills) ----
-
-
-
-
 # ---- Bottom input ----
-# ---- Process Input (Typing OR Pill Click) ----
-# This line captures the text input from the user
-chat_input = st.chat_input("Type your question…")
+user_input = st.chat_input("Type your question…")
 
-# This logic decides which input to use: the typed text or the pill clicked
-final_input = chat_input or pill_selection
-
-if final_input:
-    # 1. Show user message immediately
+if user_input:
+    # Show user message immediately
     with st.chat_message("user"):
-        st.markdown(final_input)
+        st.markdown(user_input)
 
-    # 2. Get the response from your LangChain bot
-    # We use chat_history before adding the current turn to memory
+    # IMPORTANT: use history BEFORE adding this user input
     history_before = list(st.session_state.chat_history)
 
+    response = chain.invoke({
+        "question": user_input,
+        "chat_history": history_before
+    })
+
     with st.chat_message("assistant"):
-        response = chain.invoke({
-            "question": final_input,
-            "chat_history": history_before
-        })
         st.markdown(response)
 
-    # 3. Save both to memory
-    st.session_state.chat_history.append(HumanMessage(content=final_input))
+    # Now save both to memory (in correct order)
+    st.session_state.chat_history.append(HumanMessage(content=user_input))
     st.session_state.chat_history.append(AIMessage(content=response))
 
-    # 4. Limit history and Rerun to refresh the chat UI
+    # Keep last 20 messages (10 turns)
     if len(st.session_state.chat_history) > 20:
         st.session_state.chat_history = st.session_state.chat_history[-20:]
-    
-    st.rerun()

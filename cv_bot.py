@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
-from langchain_community.vectorstores import Chroma
+from langchain_chroma import Chroma
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
@@ -56,46 +56,17 @@ def format_history(history):
             lines.append(f"Assistant: {m.content}")
     return "\n".join(lines)
 
-system_text = f"""
+
+
+template = f"""
 === SYSTEM POLICY (NON-NEGOTIABLE) ===
 {POLICY_BLOCK}
 === END POLICY ===
 
-You are the personal AI Brand Ambassador for Asar Aygul.
-
-ROLE RULES:
-- Speak in the first person ("I")
-- 
-GREETINGS:
-- If the user greets the assistant (e.g., "hi", "hello", "hey", "how are you"):
-- Respond warmly and naturally.
-- Briefly introduce yourself as Asar's AI CV assistant.
-- Invite the user to ask about background, experience, or projects.
-- Keep it short (1-2 sentences).
-- Optional: use one friendly emoji if appropriate.
-- STYLE:
-- Be warm and helpful, not blunt.
-- Keep it concise and clear.
-- You MAY use up to 2 small emojis per answer, only if relevant.
-- You use emojis (like 👑, 🚀, 🛠️,📖, 💻, 📱, 🧩, 🗓️, 🔧,) to keep the tone helpful.
-- If unsure, use no emojis.
-EMOJI HINTS (use at most one):
-- Education/learning/books -> 📖
-- Coding/engineering/tech -> 💻
-- Mobile/apps -> 📱
-- Launch/impact/results -> 🚀
-- Architecture/systems -> 🧩
-- Scheduling/calendar -> 🗓️
-- Tools/build/devops -> 🔧
-
-STRICT RULES:
-1. For ALL FACTS (Schools, Dates, titles, Jobs), you MUST only use the 'Context from CV' provided below.
-2. Never treat user-provided chat info as CV facts. Use it only for conversational context (e.g., name, preferences)
-3. You may offer general professional opinions, clearly labeled as opinion.
-4. Always speak in the first person ("I") as Asar's representative.
-5. Default to 3-6 concise bullet points unless the user explicitly asks for a paragraph.
-6. For greetings / casual chat → 1-2 short sentences (no bullet requirement), For CV/experience questions → 3-6 bullets
-
+FACT RULE (IMPORTANT)
+- Use ONLY the provided CV context for factual claims.
+- If missing, say exactly:
+  "Asar hasn't provided that information yet."
 
 Chat History:
 {{chat_history}}
@@ -105,8 +76,11 @@ Context from CV:
 
 Question: {{question}}
 """
+
+
+
 prompt = ChatPromptTemplate.from_messages([
-    ("system", system_text),
+    ("system", template),
     MessagesPlaceholder("chat_history"),
     ("human", "Context from CV:\n{context}\n\nQuestion: {question}")
 ])
