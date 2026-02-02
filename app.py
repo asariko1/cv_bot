@@ -5,36 +5,37 @@ from cv_bot import chain
 # --- 2026 Minimalist CSS Button Layout ---
 st.markdown("""
     <style>
-    /* 1. FORCE THE GRID: Stop vertical stacking on mobile */
-    [data-testid="column"] {
-        width: calc(50% - 1rem) !important;
-        flex: 1 1 calc(50% - 1rem) !important;
-        min-width: calc(50% - 1rem) !important;
-    }
-
-    /* 2. SLIM BUTTONS: Remove the bulk */
-    div.stButton > button {
-        border-radius: 4px !important;
-        height: 2.2rem !important; /* Extremely slim height */
-        line-height: 1 !important;
-        padding: 0px !important;
-        font-size: 12px !important;
-        background-color: #ffffff !important;
-        color: #2c3e50 !important; /* Midnight Blue */
-        border: 1px solid #e0e0e0 !important;
-        box-shadow: none !important;
-    }
-
-    /* 3. TIGHTEN SPACING: Pull everything up */
+    /* FORCE A LOCKED 2-COLUMN GRID */
     [data-testid="stHorizontalBlock"] {
-        gap: 0.4rem !important;
-        margin-bottom: -0.8rem !important;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; /* Forces 2 equal columns */
+        gap: 8px !important;
+        width: 100% !important;
     }
-    
-    /* Remove default Streamlit padding that causes extra white space */
-    .main .block-container {
-        padding-top: 2rem !important;
-        padding-bottom: 2rem !important;
+
+    /* PREVENT COLUMN STACKING */
+    [data-testid="column"] {
+        width: 100% !important;
+        flex: none !important;
+    }
+
+    /* SLIM MINIMALIST BUTTONS */
+    div.stButton > button {
+        width: 100% !important;
+        height: 2.2rem !important;
+        padding: 0px !important;
+        font-size: 13px !important;
+        border-radius: 4px !important;
+        background-color: white !important;
+        color: #2c3e50 !important; /* Midnight Blue */
+        border: 1px solid #dfe1e5 !important;
+    }
+
+    /* HOVER STATE */
+    div.stButton > button:hover {
+        border-color: #34495e !important;
+        color: #34495e !important;
+        background-color: #f8f9fa !important;
     }
     </style>
     """, unsafe_allow_html=True)
@@ -110,34 +111,35 @@ pill_selection = st.session_state.pill_selection
 st.session_state.pill_selection = None
 
 # 3. UI LAYOUT: 2-Column Grid (CSS from Step 1 will fix mobile width)
-col1, col2 = st.columns(2)
+# Put all buttons in one 'st.columns(2)' block
+cols = st.columns(2)
 
-with col1:
-    if st.button("🚢 Royal Caribbean 🚢"):
-        st.session_state.pill_selection = "Tell me about your current role at Royal Caribbean and what you own end-to-end."
+with cols[0]:
+    if st.button("🚢 Royal Caribbean", use_container_width=True):
+        st.session_state.pill_selection = "Tell me about your role at Royal Caribbean."
         st.rerun()
-    if st.button("🏢 Nestlé 🏢"):
-        st.session_state.pill_selection = "Summarize your Nestlé experience and what outcomes you drove."
+    if st.button("🏢 Nestlé", use_container_width=True):
+        st.session_state.pill_selection = "Summarize your Nestlé experience."
         st.rerun()
-    if st.button("🗂️ CRM / Analytics 🗂️"):
-        st.session_state.pill_selection = "Describe your CRM / analytics experience and how you used data to drive decisions."
+    if st.button("🗂️ CRM / Analytics", use_container_width=True):
+        st.session_state.pill_selection = "Describe your CRM experience."
         st.rerun()
-    if st.button("🛠️ Projects 🛠️"):
-        st.session_state.pill_selection = "Tell me about your top projects like Chatbot, EchoPath and RedCast."
+    if st.button("🛠️ Top Projects", use_container_width=True):
+        st.session_state.pill_selection = "Tell me about your top projects."
         st.rerun()
 
-with col2:
-    if st.button("📱 Apps 📱"):
-        st.session_state.pill_selection = "What apps have you worked on (professional + personal)? Summarize briefly."
+with cols[1]:
+    if st.button("📱 Apps", use_container_width=True):
+        st.session_state.pill_selection = "What apps have you worked on?"
         st.rerun()
-    if st.button("🧩 Turkcell 🧩"):
-        st.session_state.pill_selection = "Summarize your Tukcell experience and what outcomes you drove."
+    if st.button("🧩 Platform", use_container_width=True):
+        st.session_state.pill_selection = "Describe your platform trade-off decisions."
         st.rerun()
-    if st.button("🧠 Skills 🧠"):
-        st.session_state.pill_selection = "What are your strongest skills? Keep it recruiter-friendly in bullets."
+    if st.button("🧠 Skills", use_container_width=True):
+        st.session_state.pill_selection = "What are your strongest skills?"
         st.rerun()
-    if st.button("🌍 Global Reach   "):
-        st.session_state.pill_selection = "Which international markets have you worked in?"
+    if st.button("🌍 Global Reach", use_container_width=True):
+        st.session_state.pill_selection = "Which markets have you worked in?"
         st.rerun()
 # ---- END QUICK REPLIES ----
 
