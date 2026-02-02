@@ -2,6 +2,51 @@ import streamlit as st
 from langchain_core.messages import HumanMessage, AIMessage
 from cv_bot import chain
 
+# --- 2026 Minimalist CSS Button Layout ---
+st.markdown("""
+    <style>
+    /* 1. FORCE THE 2-COLUMN GRID (Fixed for Mobile) */
+    [data-testid="stHorizontalBlock"] {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; /* Forces 2 equal halves */
+        gap: 6px !important; /* Tightens space between buttons */
+        width: 100% !important;
+    }
+
+    /* 2. PREVENT STACKING & OVERFLOW */
+    [data-testid="column"] {
+        width: 100% !important;
+        flex: none !important;
+    }
+
+    /* 3. SLIM GHOST BUTTONS (Midnight Blue) */
+    div.stButton > button {
+        width: 100% !important;
+        height: 2.2rem !important; /* Keeps height minimalist */
+        padding: 0px 2px !important; /* Minimal horizontal padding */
+        
+        /* FONT SCALING FIX */
+        font-size: 9px !important; /* Slightly smaller to fit long words */
+        white-space: nowrap !important; /* Prevents text from breaking into 2 lines */
+        overflow: hidden !important;
+        text-overflow: ellipsis !important; /* Adds '...' if text is way too long */
+        
+        border-radius: 4px !important;
+        background-color: white !important;
+        color: #2c3e50 !important; /* Your Midnight Blue */
+        border: 1px solid #dfe1e5 !important;
+    }
+
+    /* 4. HOVER STATE */
+    div.stButton > button:hover {
+        border-color: #34495e !important;
+        background-color: #f8f9fa !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+# --- End of Updated CSS design ---
+
+
 st.set_page_config(page_title="Asar's CV Bot", page_icon="🚀")
 
 # ---- SIDEBAR: Contact & Location Info ----
@@ -17,8 +62,7 @@ with st.sidebar:
     🌐 [asariko.net](https://asariko.net)
     
     ---
-    *Current Focus:*
-    Asar is currently leading mobile and web platforms at *Royal Caribbean Group*, managing regional operations.
+    **Current Focus:** Asar is currently leading mobile and web platforms at **Royal Caribbean Group**, managing regional operations.
     ---
     **Global Market Experience:** US, Mediterranean, North Europe, Australia/NZ.
 
@@ -46,10 +90,10 @@ if len(st.session_state.chat_history) == 0:
     )
 
 
-# ---- Clear button (simple, standard) ----
-if st.button("Clear chat"):
-    st.session_state.chat_history = []
-    st.rerun()
+# ---- Clear button (simple, standard) ---- (We placed to sidebar, no need this one.)
+#if st.button("Clear chat"):
+ #   st.session_state.chat_history = []
+  #  st.rerun()
 
 # ---- Render history (this is the part you were missing) ----
 for msg in st.session_state.chat_history:
@@ -60,62 +104,80 @@ for msg in st.session_state.chat_history:
         with st.chat_message("assistant"):
             st.markdown(msg.content)
 
+# ---- QUICK REPLIES (Modern 2x4 Grid) ----
+st.write("---") 
 
-# ---- QUICK REPLIES (Pills) ----
-st.write("---") # Visual separator
-cols = st.columns(3)
-pill_selection = None
+# 1. Initialize session state if not already done (Safety check)
+if "pill_selection" not in st.session_state:
+    st.session_state.pill_selection = None
+
+# 2. CAPTURE & CLEAR: Pull selection to local variable and reset state
+pill_selection = st.session_state.pill_selection
+st.session_state.pill_selection = None
+
+# 3. UI LAYOUT: 2-Column Grid (CSS from Step 1 will fix mobile width)
+# Put all buttons in one 'st.columns(2)' block
+cols = st.columns(2)
 
 with cols[0]:
-    if st.button("🛠️ Top Projects"):
-        pill_selection = "Tell me about your top projects like EchoPath and RedCast."
+    if st.button("🚢 Royal Caribbean", use_container_width=True):
+        st.session_state.pill_selection = "Tell me about your role at Royal Caribbean."
+        st.rerun()
+    if st.button("🏢 Nestlé", use_container_width=True):
+        st.session_state.pill_selection = "Summarize your Nestlé experience."
+        st.rerun()
+    if st.button("🗂️ CRM / Analytics", use_container_width=True):
+        st.session_state.pill_selection = "Describe your CRM experience."
+        st.rerun()
+    if st.button("🛠️ Top Projects", use_container_width=True):
+        st.session_state.pill_selection = "Tell me about your top projects."
+        st.rerun()
+
 with cols[1]:
-    if st.button("📊 Experience"):
-        pill_selection = "What was your role at Royal Caribbean Group?"
-with cols[2]:
-    if st.button("🌍 Global Reach"):
-        pill_selection = "Which international markets have you worked in?"
+    if st.button("📱 Apps", use_container_width=True):
+        st.session_state.pill_selection = "What apps have you worked on?"
+        st.rerun()
+    if st.button("🧩 Platform", use_container_width=True):
+        st.session_state.pill_selection = "Describe your platform trade-off decisions."
+        st.rerun()
+    if st.button("🧠 Skills", use_container_width=True):
+        st.session_state.pill_selection = "What are your strongest skills?"
+        st.rerun()
+    if st.button("🌍 Global Reach", use_container_width=True):
+        st.session_state.pill_selection = "Which markets have you worked in?"
+        st.rerun()
+# ---- END QUICK REPLIES ----
 
 
+# ---- PROCESS INPUT (Typing OR Button Click) ----
+chat_input = st.chat_input("Type your question...")
 
-# If a pill is clicked, treat it like user input
-if pill_selection:
-    user_input = pill_selection
-# ---- END QUICK REPLIES (Pills) ----
-
-
-
-
-# ---- Bottom input ----
-# ---- Process Input (Typing OR Pill Click) ----
-# This line captures the text input from the user
-chat_input = st.chat_input("Type your question…")
-
-# This logic decides which input to use: the typed text or the pill clicked
+# This chooses whichever input is active (the text box or the button clicked)
 final_input = chat_input or pill_selection
 
 if final_input:
-    # 1. Show user message immediately
+    # Show user message
     with st.chat_message("user"):
         st.markdown(final_input)
 
-    # 2. Get the response from your LangChain bot
-    # We use chat_history before adding the current turn to memory
+    # Get response from the bot
     history_before = list(st.session_state.chat_history)
 
     with st.chat_message("assistant"):
+        # This calls your langchain chain in cv_bot.py
         response = chain.invoke({
             "question": final_input,
             "chat_history": history_before
         })
         st.markdown(response)
 
-    # 3. Save both to memory
+    # Save to history
     st.session_state.chat_history.append(HumanMessage(content=final_input))
     st.session_state.chat_history.append(AIMessage(content=response))
 
-    # 4. Limit history and Rerun to refresh the chat UI
+    # Keep history manageable (last 20 messages)
     if len(st.session_state.chat_history) > 20:
         st.session_state.chat_history = st.session_state.chat_history[-20:]
     
+    # Rerun to update the UI
     st.rerun()

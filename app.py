@@ -3,47 +3,12 @@ from langchain_core.messages import HumanMessage, AIMessage
 from cv_bot import chain
 
 # --- 2026 Minimalist CSS Button Layout ---
-st.markdown("""
-    <style>
-    /* 1. FORCE THE 2-COLUMN GRID (Fixed for Mobile) */
-    [data-testid="stHorizontalBlock"] {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important; /* Forces 2 equal halves */
-        gap: 6px !important; /* Tightens space between buttons */
-        width: 100% !important;
-    }
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-    /* 2. PREVENT STACKING & OVERFLOW */
-    [data-testid="column"] {
-        width: 100% !important;
-        flex: none !important;
-    }
+local_css("style.css")  #<-- Calling css file ---
 
-    /* 3. SLIM GHOST BUTTONS (Midnight Blue) */
-    div.stButton > button {
-        width: 100% !important;
-        height: 2.2rem !important; /* Keeps height minimalist */
-        padding: 0px 2px !important; /* Minimal horizontal padding */
-        
-        /* FONT SCALING FIX */
-        font-size: 9px !important; /* Slightly smaller to fit long words */
-        white-space: nowrap !important; /* Prevents text from breaking into 2 lines */
-        overflow: hidden !important;
-        text-overflow: ellipsis !important; /* Adds '...' if text is way too long */
-        
-        border-radius: 4px !important;
-        background-color: white !important;
-        color: #2c3e50 !important; /* Your Midnight Blue */
-        border: 1px solid #dfe1e5 !important;
-    }
-
-    /* 4. HOVER STATE */
-    div.stButton > button:hover {
-        border-color: #34495e !important;
-        background-color: #f8f9fa !important;
-    }
-    </style>
-    """, unsafe_allow_html=True)
 # --- End of Updated CSS design ---
 
 
