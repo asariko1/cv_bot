@@ -113,16 +113,16 @@ st.session_state.pill_selection = None
 col1, col2 = st.columns(2)
 
 with col1:
-    if st.button("🚢 Royal Caribbean", use_container_width=True):
+    if st.button("🚢 Royal Caribbean"):
         st.session_state.pill_selection = "Tell me about your current role at Royal Caribbean and what you own end-to-end."
         st.rerun()
-    if st.button("🏢 Nestlé", use_container_width=True):
+    if st.button("🏢 Nestlé"):
         st.session_state.pill_selection = "Summarize your Nestlé experience and what outcomes you drove."
         st.rerun()
-    if st.button("🗂️ CRM / Analytics", use_container_width=True):
+    if st.button("🗂️ CRM / Analytics"):
         st.session_state.pill_selection = "Describe your CRM / analytics experience and how you used data to drive decisions."
         st.rerun()
-    if st.button("🛠️ Top Projects", use_container_width=True):
+    if st.button("🛠️ Top Projects"):
         st.session_state.pill_selection = "Tell me about your top projects like EchoPath and RedCast."
         st.rerun()
 
