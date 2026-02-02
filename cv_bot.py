@@ -32,31 +32,36 @@ embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
 model = ChatGoogleGenerativeAI(model=WORKING_MODEL_NAME)
 
 # 4. SETUP THE FILING CABINET (Vector Store)
+# 4. SETUP THE FILING CABINET (Vector Store)
 persist_dir = "my_cv_database"
-if os.path.exists(persist_dir):
-    vectorstore = Chroma(persist_directory=persist_dir, embedding_function=embeddings)
-else:
-    vectorstore = Chroma.from_texts(texts=chunks, embedding=embeddings, persist_directory=persist_dir)
-    vectorstore.persist()
 
+# If the database folder already exists, just load it
+if os.path.exists(persist_dir):
+    vectorstore = Chroma(
+        persist_directory=persist_dir, 
+        embedding_function=embeddings,
+        collection_name="asar_cv_collection"
+    )
+# If it doesn't exist, create it from your CV chunks
+else:
+    vectorstore = Chroma.from_texts(
+        texts=chunks, 
+        embedding=embeddings, 
+        persist_directory=persist_dir,
+        collection_name="asar_cv_collection"
+    )
+    # NOTE: .persist() is removed because the library now saves automatically.
+
+# THIS LINE MUST COME FIRST
 retriever = vectorstore.as_retriever(search_kwargs={"k": 8})
 
+# 5. DEFINE THE CONTEXT RETRIEVER FUNCTION
+# (This is the part the error says is missing!)
 def get_full_context(input_data):
     actual_question = input_data["question"]
     docs = retriever.invoke(actual_question)
     cv_text = "\n\n".join(doc.page_content for doc in docs)
     return cv_text
-
-def format_history(history):
-    lines = []
-    for m in history:
-        if isinstance(m, HumanMessage):
-            lines.append(f"User: {m.content}")
-        elif isinstance(m, AIMessage):
-            lines.append(f"Assistant: {m.content}")
-    return "\n".join(lines)
-
-
 
 template = f"""
 === SYSTEM POLICY (NON-NEGOTIABLE) ===
