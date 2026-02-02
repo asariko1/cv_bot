@@ -2,34 +2,44 @@ import streamlit as st
 from langchain_core.messages import HumanMessage, AIMessage
 from cv_bot import chain
 
-# --- CSS Button Lay out ---
-st.markdown("""
+# --- 2026 Minimalist CSS Button Layout ---
+st.markdown(f"""
     <style>
-    /* Reduce button height and padding */
-    div.stButton > button {
-        height: 3em;
-        padding-top: 0px;
-        padding-bottom: 0px;
-        border-radius: 8px;
-        border: 1px solid #dfe1e5;
-        background-color: white;
-        color: #2c3e50; /* Your preferred midnight blue */
-        font-weight: 500;
-        font-size: 14px;
-        transition: all 0.2s ease;
-    }
+    /* 1. FORCE 2 COLUMNS ON MOBILE (Fixes the vertical stack) */
+    [data-testid="column"] {{
+        width: calc(50% - 1rem) !important;
+        flex: 1 1 calc(50% - 1rem) !important;
+        min-width: calc(50% - 1rem) !important;
+    }}
     
-    /* Subtle hover effect for modern feel */
-    div.stButton > button:hover {
+    /* 2. GLOBAL BUTTON STYLING: Slim & Professional */
+    div.stButton > button {{
+        width: 100%;
+        border-radius: 6px; 
+        height: 2.4rem;     /* Slimmer height to save screen space */
+        padding: 0px 5px;
+        font-size: 13px;
+        font-weight: 500;
+        background-color: white;
+        color: #2c3e50;    /* Your Midnight Blue */
+        border: 1px solid #dfe1e5;
+        transition: all 0.3s ease;
+    }}
+
+    /* 3. HOVER EFFECT */
+    div.stButton > button:hover {{
         border-color: #34495e;
-        background-color: #f8f9fa;
         color: #34495e;
-    }
+        background-color: #f8f9fa;
+    }}
+
+    /* 4. REDUCE WHITE SPACE between rows */
+    [data-testid="stHorizontalBlock"] {{
+        gap: 0.5rem !important;
+    }}
     </style>
     """, unsafe_allow_html=True)
-
-    # --- End of CSS design ---
-
+# --- End of Updated CSS design ---
 
 
 st.set_page_config(page_title="Asar's CV Bot", page_icon="🚀")
@@ -89,19 +99,18 @@ for msg in st.session_state.chat_history:
         with st.chat_message("assistant"):
             st.markdown(msg.content)
 
-# ---- QUICK REPLIES (Pills) ----
-# 1. INITIALIZE SESSION STATE (Put this near your chat_history initialization)
+# ---- QUICK REPLIES (Modern 2x4 Grid) ----
+st.write("---") 
+
+# 1. Initialize session state if not already done (Safety check)
 if "pill_selection" not in st.session_state:
     st.session_state.pill_selection = None
 
-# ---- Pills buttons starts from here ----
-st.write("---") 
-
-# 2. CAPTURE & CLEAR: Pull the selection from session state and reset it immediately
+# 2. CAPTURE & CLEAR: Pull selection to local variable and reset state
 pill_selection = st.session_state.pill_selection
 st.session_state.pill_selection = None
 
-# 3. UI LAYOUT: 2-Column Button Grid
+# 3. UI LAYOUT: 2-Column Grid (CSS from Step 1 will fix mobile width)
 col1, col2 = st.columns(2)
 
 with col1:
@@ -131,6 +140,8 @@ with col2:
     if st.button("🌍 Global Reach", use_container_width=True):
         st.session_state.pill_selection = "Which international markets have you worked in?"
         st.rerun()
+# ---- END QUICK REPLIES ----
+
 
 # ---- PROCESS INPUT (Typing OR Button Click) ----
 chat_input = st.chat_input("Type your question...")
