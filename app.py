@@ -17,7 +17,11 @@ with st.sidebar:
     🌐 [asariko.net](https://asariko.net)
     
     ---
+    **Current Focus:**
+    Asar is currently leading mobile and web platforms at **Royal Caribbean Group**, managing regional operations.
+    ---
     **Global Market Experience:** US, Mediterranean, North Europe, Australia/NZ.
+
     **Languages:** Turkish - English
     """)
 
@@ -59,18 +63,38 @@ for msg in st.session_state.chat_history:
 
 # ---- QUICK REPLIES (Pills) ----
 st.write("---") # Visual separator
-cols = st.columns(3)
+#cols = st.columns(3)
 pill_selection = None
+# Define the 2-column layout
+col1, col2 = st.columns(2)
 
-with cols[0]:
-    if st.button("🛠️ Top Projects"):
-        pill_selection = "Tell me about your top projects like EchoPath and RedCast."
-with cols[1]:
-    if st.button("📊 Experience"):
-        pill_selection = "What was your role at Royal Caribbean Group?"
-with cols[2]:
-    if st.button("🌍 Global Reach"):
-        pill_selection = "Which international markets have you worked in?"
+with col1:
+    if st.button("🚢 Royal Caribbean", use_container_width=True):
+        st.session_state.pill_selection = "Tell me about your current role at Royal Caribbean and what you own end-to-end."
+        st.rerun()
+    if st.button("🏢 Nestlé", use_container_width=True):
+        st.session_state.pill_selection = "Summarize your Nestlé experience and what outcomes you drove."
+        st.rerun()
+    if st.button("🗂️ CRM / Analytics", use_container_width=True):
+        st.session_state.pill_selection = "Describe your CRM / analytics experience and how you used data to drive decisions."
+        st.rerun()
+    if st.button("🛠️ Top Projects", use_container_width=True):
+        st.session_state.pill_selection = "Tell me about your top projects like EchoPath and RedCast."
+        st.rerun()
+
+with col2:
+    if st.button("📱 Apps", use_container_width=True):
+        st.session_state.pill_selection = "What apps have you worked on (professional + personal)? Summarize briefly."
+        st.rerun()
+    if st.button("🧩 Platform/Architecture", use_container_width=True):
+        st.session_state.pill_selection = "Describe how you make platform decisions and trade-offs with engineering."
+        st.rerun()
+    if st.button("🧠 Skills", use_container_width=True):
+        st.session_state.pill_selection = "What are your strongest skills? Keep it recruiter-friendly in bullets."
+        st.rerun()
+    if st.button("🌍 Global Reach", use_container_width=True):
+        st.session_state.pill_selection = "Which international markets have you worked in?"
+        st.rerun()
 
 # If a pill is clicked, treat it like user input
 if pill_selection:
