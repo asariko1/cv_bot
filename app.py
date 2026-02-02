@@ -7,8 +7,8 @@ st.set_page_config(page_title="Asar's CV Bot", page_icon="🚀")
 # ---- SIDEBAR: Contact & Location Info ----
 with st.sidebar:
     st.image("https://github.com/asariko1.png", width=100) # Your GitHub Profile Pic
-    st.title("Asar Aygul")
-    st.subheader("Digital Manager")
+    st.title("Aşar Aygül")
+    st.subheader("Digital Manager | Royal Caribbean")
     
     st.markdown("""
     📍 **Locations:** Istanbul 🇹🇷 / Miami 🇺🇸  
@@ -18,6 +18,8 @@ with st.sidebar:
     
     ---
     **Global Market Experience:** US, Mediterranean, North Europe, Australia/NZ.
+    **Languages:** Turkish (Mother Language) English (Proficiency)
+
     """)
     
     if st.button("Clear Chat History"):
