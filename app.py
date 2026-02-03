@@ -102,10 +102,10 @@ with cols[0]:
         st.rerun()
 
 with cols[1]:
-    if st.button("📱 Apps", use_container_width=True):
-        st.session_state.pill_selection = "What apps have you worked on?"
+    if st.button("💳 POS", use_container_width=True):
+        st.session_state.pill_selection = "Tell me about your experience managing POS system implementations and revenue platforms."
         st.rerun()
-    if st.button("🛠️ Projects", use_container_width=True):
+    if st.button("📱 Apps", use_container_width=True):
         st.session_state.pill_selection = "Tell me about your top projects."
         st.rerun()
     if st.button("🧠 Skills", use_container_width=True):

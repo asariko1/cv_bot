@@ -45,7 +45,7 @@ Before my current role, I held several analytics and systems-focused positions t
 
 • Senior Analyst – Nestlé Turkey (2021–2022): Led CRM analytics, customer segmentation, and insight-driven reporting to support growth and targeting strategies.  
 • Junior Analyst – Nestlé Turkey (2020–2021): Analyzed consumer behavior and supported CRM and promotional optimization initiatives.  
-• Business Systems Analyst – Royal Caribbean Cruises Ltd. (2017–2019): Worked on POS and customer-facing systems, focusing on business processes and system integration.  
+• Business Systems Analyst – Royal Caribbean Cruises Ltd. (2017–2019): Managed POS systems and Secure Guest Folios, integrating tokenized payment flows for seamless cruise transactions.  
 • Training Manager – Royal Caribbean Cruises Ltd. (2015–2016): Led large-scale enterprise system training programs supporting global platform rollouts.
 Training Manager — Royal Caribbean (United States)  
 (2015 – 2016)  
@@ -64,10 +64,10 @@ Worked on network operations, monitoring, and infrastructure support within a te
 PROFESSIONAL PLATFORM PROJECTS
 ========================
 • Royal Caribbean International App (Royal App)
-• Enterprise-scale customer-facing digital platforms
+• Enterprise scale customer facing digital platforms
 • Platform governance and rollout initiatives
 • Multi-region platform operations and optimization
-
+• Integrated secure payment systems with POS
 
 ========================
 INDEPENDENT PRODUCT WORK (SUPPORTING)
