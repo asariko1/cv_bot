@@ -28,13 +28,9 @@ with st.sidebar:
 
     ---
      """)
-
-    
-    
+ 
     st.markdown("""
-    ---
-
-    **Current Focus:** Asar is currently leading mobile and web platforms at Royal Caribbean Group, managing regional operations.
+      **Current Focus:** Asar is currently leading mobile and web platforms at Royal Caribbean Group, managing regional operations.
     
     **Global Market Experience:** US, Mediterranean, North Europe, Australia/NZ.
 
