@@ -25,6 +25,8 @@ with st.sidebar:
     📧 **Email:** asaraygul@gmail.com  
     🔗 [LinkedIn Profile](https://www.linkedin.com/in/asar-aygul)  
     🌐 [asariko.net](https://asariko.net)
+
+    ---
      """)
 
     
