@@ -25,8 +25,10 @@ with st.sidebar:
     📧 **Email:** asaraygul@gmail.com  
     🔗 [LinkedIn Profile](https://www.linkedin.com/in/asar-aygul)  
     🌐 [asariko.net](https://asariko.net)
+    ---
      """)
 
+    
     
     st.markdown("""
     **Current Focus:** Asar is currently leading mobile and web platforms at Royal Caribbean Group, managing regional operations.
