@@ -30,11 +30,9 @@ CURRENT ROLE
 Digital Manager — Royal Caribbean Group  
 (2021 – Present)
 
-Own product and platform delivery for customer-facing digital systems, including mobile and web platforms.
-Responsible for prioritization, governance, and roadmap execution across multiple regions and stakeholders.
-Lead platform decision-making by balancing customer experience, operational needs, and long-term system sustainability.
-Work closely with engineering teams using strong backend and integration awareness to guide trade-offs and reduce delivery risk.
-Currently focused on the Royal Caribbean International App (Royal App).
+• Managed the Royal App's digital ecosystem for guest facing digital tools(mobile & digital screens) by setting clear rules for how features are built and prioritized.
+• Coordinate across departments (Product, Tech, Marketing, Operations) to ensure the platform remains stable as it grows, without sacrificing a smooth user experience.
+• Use technical and product expertise to increase guest bookings and engagement worldwide
 
 
 ========================
@@ -43,7 +41,7 @@ PREVIOUS ROLES (SELECTED)
 
 Before my current role, I held several analytics and systems-focused positions that shaped my approach to product and platform ownership:
 
-• Junior Analyst – Nestlé Turkey (2020–2021): Analyzed consumer behavior purchase behavior for Nescafé 3-in-1 and supported CRM and promotional optimization initiatives, support growth and targeting strategies. 
+• Junior Analyst – Nestlé Turkey (2020–2021): Analyzed consumer purchase behavior for Nescafé 3-in-1 and supported CRM and promotional optimization initiatives, support growth and targeting strategies. 
 • Business Systems Analyst – Royal Caribbean Cruises Ltd. (2017–2019): Focused on POS and revenue-related systems across multiple international markets. Delivered analysis and structured reporting to identify revenue opportunities and product performance. Defined and tracked key performance indicators (KPIs) for POS revenue streams.
 • Travelling Manager - System, Project & Training Royal Caribbean Cruises Ltd. (2016–2017): Led POS system implementation and enablement across multiple ships, collaborating with implementation and infrastructure teams, integrating EMA and tokenized payment flows for seamless cruise transactions. Contributed to operational planning for new builds and dry dock projects, and enabled large-scale system adoption.
 • Training Manager – Royal Caribbean Cruises Ltd. (2015–2016): Led large-scale enterprise system training programs supporting global platform rollouts.
