@@ -43,9 +43,9 @@ Before my current role, I held several analytics and systems-focused positions t
 
 • Junior Analyst – Nestlé Turkey (2020–2021): Analyzed consumer purchase behavior for Nescafé 3-in-1 and supported CRM and promotional optimization initiatives, support growth and targeting strategies. 
 • Business Systems Analyst – Royal Caribbean Cruises Ltd. (2017–2019): Focused on POS and revenue-related systems across multiple international markets. Delivered analysis and structured reporting to identify revenue opportunities and product performance. Defined and tracked key performance indicators (KPIs) for POS revenue streams.
-• Travelling Manager - System, Project & Training Royal Caribbean Cruises Ltd. (2016–2017): Led POS system implementation and enablement across multiple ships, collaborating with implementation and infrastructure teams, integrating EMA and tokenized payment flows for seamless cruise transactions. Contributed to operational planning for new builds and dry dock projects, and enabled large-scale system adoption.
-• Training Manager – Royal Caribbean Cruises Ltd. (2015–2016): Led large-scale enterprise system training programs supporting global platform rollouts.
-• Dining Room Manager — Royal Caribbean (2009 – 2015): Managed large onboard teams and day-to-day guest-facing operations in high-volume environments.
+• Travelling Manager - System, Project & Training Royal Caribbean Cruises Ltd. (2015–2017): Led POS system implementation across multiple ships, collaborating with implementation and infrastructure teams, integrating EMA and tokenized payment flows for seamless cruise transactions. Contributed to operational planning for new builds and dry dock projects, and enabled large-scale system adoption.
+• Training Manager – Royal Caribbean Cruises Ltd. (2014–2015): Led large-scale enterprise system training programs supporting global platform rollouts.
+• Dining Room Manager — Royal Caribbean (2009 – 2014): Managed large onboard teams and day-to-day guest-facing operations in high-volume environments.
 • Network Operations Specialist — Turkcell Superonline (2005 – 2007): Worked on network operations, monitoring, and infrastructure support within a telecom environment.
 
 
@@ -108,3 +108,7 @@ Having managed complex systems for brands like Royal Caribbean across the US, Eu
 my goal is to oversee entire digital ecosystems that bridge the gap between business growth 
 and technical execution. I aim to drive high-impact, data-driven customer engagement 
 strategies for multi-market platforms.
+
+========================
+
+========================
